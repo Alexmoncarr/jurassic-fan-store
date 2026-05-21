@@ -1318,9 +1318,303 @@
                 padding: 24px 16px;
             }
         }
+        /* ═══════════════════════════════════════════
+            ADMIN PANEL (oculto, acceder con ?admin=1)
+        ═══════════════════════════════════════════ */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            z-index: 99999;
+            overflow-y: auto;
+            padding: 40px 24px;
+        }
+
+        .admin-panel.open {
+            display: block;
+        }
+
+        .admin-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .admin-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .admin-close {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .admin-close:hover {
+            color: var(--danger);
+            border-color: var(--danger);
+        }
+
+        .admin-section {
+            background: var(--gradient-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .admin-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .admin-table th,
+        .admin-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .admin-table th {
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.75rem;
+        }
+
+        .admin-table td {
+            color: var(--text-secondary);
+        }
+
+        .admin-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .admin-table .btn-sm {
+            padding: 6px 14px;
+            font-size: 0.75rem;
+        }
+
+        .admin-form-group {
+            margin-bottom: 16px;
+        }
+
+        .admin-form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .admin-form-group input,
+        .admin-form-group textarea,
+        .admin-form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .admin-form-group input:focus,
+        .admin-form-group textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .admin-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .admin-instructions {
+            background: rgba(0, 229, 160, 0.05);
+            border: 1px solid rgba(0, 229, 160, 0.2);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .admin-instructions h4 {
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .admin-instructions ol {
+            padding-left: 20px;
+        }
+
+        .admin-instructions ol li {
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .admin-instructions code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .admin-form-row {
+                grid-template-columns: 1fr;
+            }
+            .admin-table {
+                font-size: 0.75rem;
+            }
+            .admin-table th,
+            .admin-table td {
+                padding: 8px 10px;
+            }
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- ADMIN PANEL -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h2>🦕 Panel de Afiliados</h2>
+            <div class="admin-close" onclick="toggleAdmin()"><i class="fas fa-times"></i></div>
+        </div>
+
+        <div class="admin-instructions">
+            <h4>📋 Instrucciones para gestionar productos de afiliados</h4>
+            <ol>
+                <li><strong>Editar productos:</strong> Modifica los campos en la tabla de abajo y pulsa "Guardar cambios"</li>
+                <li><strong>Añadir producto:</strong> Rellena el formulario "Nuevo Producto" al final</li>
+                <li><strong>Eliminar producto:</strong> Pulsa el botón 🗑️ rojo en la fila del producto</li>
+                <li><strong>URL de afiliado:</strong> Formato: <code>https://www.amazon.es/dp/ASIN?tag=TU-TAG-21</code></li>
+                <li><strong>Guardar:</strong> Los cambios se guardan en <code>products.json</code> — recuerda hacer <code>git push</code></li>
+                <li><strong>Ver web:</strong> Cierra este panel para ver la web normal</li>
+            </ol>
+        </div>
+
+        <div class="admin-section">
+            <h3>📦 Productos Actuales</h3>
+            <div style="overflow-x: auto;">
+                <table class="admin-table" id="productsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>ASIN</th>
+                            <th>Precio</th>
+                            <th>Categoría</th>
+                            <th>URL Afiliado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <!-- Se carga dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="admin-section">
+            <h3>➕ Nuevo Producto</h3>
+            <form id="newProductForm" onsubmit="return addProduct(event)">
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label>Nombre del producto</label>
+                        <input type="text" id="npName" required placeholder="Ej: Figura T-Rex Mattel">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Marca</label>
+                        <input type="text" id="npBrand" required placeholder="Ej: Mattel">
+                    </div>
+                </div>
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label>ASIN de Amazon</label>
+                        <input type="text" id="npAsin" required placeholder="Ej: B09QJLZ3HT">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Categoría</label>
+                        <select id="npCategory">
+                            <option>Figuras de Acción</option>
+                            <option>Ropa y Complementos</option>
+                            <option>Juegos y Puzzles</option>
+                            <option>Decoración</option>
+                            <option>Coleccionismo</option>
+                            <option>Libros y Películas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin-form-group">
+                    <label>Descripción</label>
+                    <textarea id="npDesc" rows="3" required placeholder="Descripción atractiva del producto..."></textarea>
+                </div>
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label>Precio actual</label>
+                        <input type="text" id="npPrice" required placeholder="Ej: 34,99€">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Precio original</label>
+                        <input type="text" id="npOriginal" placeholder="Ej: 49,99€">
+                    </div>
+                </div>
+                <div class="admin-form-row">
+                    <div class="admin-form-group">
+                        <label>Emoji/Icono</label>
+                        <input type="text" id="npIcon" placeholder="Ej: 🦖" value="🦖">
+                    </div>
+                    <div class="admin-form-group">
+                        <label>Badge</label>
+                        <select id="npBadge">
+                            <option value="">Ninguno</option>
+                            <option value="hot">🔥 Hot</option>
+                            <option value="new">Nuevo</option>
+                            <option value="sale">🏷️ Oferta</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin-form-group">
+                    <label>URL de Afiliado Amazon (completa)</label>
+                    <input type="url" id="npUrl" required placeholder="https://www.amazon.es/dp/ASIN?tag=TU-TAG-21">
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Añadir Producto
+                </button>
+            </form>
+        </div>
+    </div>
 
     <!-- PRELOADER -->
     <div class="preloader" id="preloader">
@@ -1938,12 +2232,13 @@
                         <li><a href="#">Programa de Afiliados</a></li>
                         <li><a href="#">Enlaces de Afiliado</a></li>
                         <li><a href="#">Declaración de Afiliados</a></li>
+                        <li><a href="#" onclick="toggleAdmin(); return false;">⚙️ Panel Admin</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <span>© 2025 Jurassic Fan Store. Todos los derechos reservados.</span>
-                <span>Producto afiliado de <a href="https://affiliate-program.amazon.es/" target="_blank">Amazon Associates</a></span>
+                <span>Producto afiliado de <a href="https://affiliate-program.amazon.es/" target="_blank">Amazon Associates</a> · <a href="?admin=1">Admin</a></span>
             </div>
         </div>
     </footer>
@@ -2038,6 +2333,123 @@
                 }
             });
         });
+
+        // ═══════════════════════════════════════════
+        // ADMIN PANEL
+        // ═══════════════════════════════════════════
+        let productsData = null;
+
+        // Check if admin mode via URL
+        function checkAdminMode() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('admin') === '1') {
+                toggleAdmin();
+            }
+        }
+
+        function toggleAdmin() {
+            const panel = document.getElementById('adminPanel');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open') && !productsData) {
+                loadAdminProducts();
+            }
+        }
+
+        async function loadAdminProducts() {
+            try {
+                const resp = await fetch('products.json');
+                productsData = await resp.json();
+                renderProductsTable();
+            } catch (e) {
+                console.error('Error loading products:', e);
+                document.getElementById('productsTableBody').innerHTML = 
+                    '<tr><td colspan="7" style="color:var(--danger)">Error cargando products.json</td></tr>';
+            }
+        }
+
+        function renderProductsTable() {
+            const tbody = document.getElementById('productsTableBody');
+            if (!productsData || !productsData.products) return;
+            
+            tbody.innerHTML = productsData.products.map(p => `
+                <tr>
+                    <td>${p.id}</td>
+                    <td title="${p.name}">${p.name.substring(0,40)}${p.name.length>40?'...':''}</td>
+                    <td><code>${p.asin}</code></td>
+                    <td>${p.price}</td>
+                    <td>${p.category}</td>
+                    <td><a href="${p.affiliate_url}" target="_blank" style="color:var(--accent);font-size:0.75rem;">Ver enlace</a></td>
+                    <td>
+                        <button class="btn btn-ghost btn-sm" onclick="deleteProduct(${p.id})" style="color:var(--danger);border-color:var(--danger);">
+                            🗑️
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function addProduct(e) {
+            e.preventDefault();
+            if (!productsData) return false;
+
+            const newProduct = {
+                id: Math.max(...productsData.products.map(p => p.id)) + 1,
+                asin: document.getElementById('npAsin').value.trim(),
+                name: document.getElementById('npName').value.trim(),
+                brand: document.getElementById('npBrand').value.trim(),
+                category: document.getElementById('npCategory').value,
+                description: document.getElementById('npDesc').value.trim(),
+                price: document.getElementById('npPrice').value.trim(),
+                original_price: document.getElementById('npOriginal').value.trim() || '',
+                discount: '',
+                rating: 4.5,
+                reviews: 0,
+                badge: document.getElementById('npBadge').value,
+                badge_text: document.getElementById('npBadge').value === 'hot' ? '🔥 Hot' : 
+                             document.getElementById('npBadge').value === 'new' ? 'Nuevo' : 
+                             document.getElementById('npBadge').value === 'sale' ? '🏷️ Oferta' : '',
+                icon: document.getElementById('npIcon').value.trim() || '🦖',
+                affiliate_url: document.getElementById('npUrl').value.trim()
+            };
+
+            productsData.products.push(newProduct);
+            renderProductsTable();
+            
+            // Download updated JSON
+            const blob = new Blob([JSON.stringify(productsData, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'products.json';
+            a.click();
+            URL.revokeObjectURL(url);
+
+            alert('✅ Producto añadido. Se ha descargado el archivo products.json actualizado.\n\nSube el archivo nuevo al repo con:\ngit add products.json\ngit commit -m "Nuevo producto: ' + newProduct.name + '"\ngit push');
+            
+            document.getElementById('newProductForm').reset();
+            return false;
+        }
+
+        function deleteProduct(id) {
+            if (!confirm('¿Eliminar producto #' + id + '?')) return;
+            if (!productsData) return;
+            productsData.products = productsData.products.filter(p => p.id !== id);
+            renderProductsTable();
+            
+            // Download updated JSON
+            const blob = new Blob([JSON.stringify(productsData, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'products.json';
+            a.click();
+            URL.revokeObjectURL(url);
+
+            alert('🗑️ Producto eliminado. Descarga el nuevo products.json y súbelo al repo.');
+        }
+
+        // Init admin check
+        checkAdminMode();
     </script>
 </body>
 </html>
