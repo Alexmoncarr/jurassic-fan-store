@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jurassicfanstore.es/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
