@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Las 10 figuras de Jurassic World que todo coleccionista debe tener. Guía completa con las mejores figuras de Mattel, Schleich, Hasbro y Hammond Collection.">
+    <title>Las 10 Figuras de Jurassic World que Todo Coleccionista Debe Tener — Jurassic Fan Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a26;
+            --border: #2a2a3a;
+            --text-primary: #f0f0f5;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6a6a80;
+            --accent: #00e5a0;
+            --accent-glow: rgba(0, 229, 160, 0.15);
+            --danger: #ff4757;
+            --warning: #ffa502;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+        /* HEADER */
+        header { background: rgba(10, 10, 15, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1320px; margin: 0 auto; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 900; color: var(--text-primary); letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--accent); }
+        .logo-icon { font-size: 1.6rem; }
+        .back-link { color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: var(--transition); }
+        .back-link:hover { color: var(--accent); }
+
+        /* ARTICLE */
+        .article-hero { padding: 60px 0 40px; text-align: center; }
+        .article-category { display: inline-block; padding: 6px 18px; background: var(--accent); color: var(--bg-primary); border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+        .article-title { font-family: 'Orbitron', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+        .article-meta { display: flex; justify-content: center; gap: 24px; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 40px; }
+        .article-meta span { display: flex; align-items: center; gap: 6px; }
+        .article-image { width: 100%; height: 300px; background: linear-gradient(135deg, #1a2a1a, #0a1a0a); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 6rem; margin-bottom: 40px; }
+        .article-content { padding-bottom: 80px; }
+        .article-content h2 { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--accent); margin: 40px 0 16px; }
+        .article-content h3 { font-size: 1.15rem; font-weight: 700; margin: 30px 0 12px; }
+        .article-content p { color: var(--text-secondary); margin-bottom: 16px; font-size: 1.05rem; }
+        .article-content ul { margin: 16px 0 24px 24px; }
+        .article-content ul li { color: var(--text-secondary); margin-bottom: 8px; position: relative; padding-left: 8px; }
+        .article-content ul li::before { content: '🦖'; position: absolute; left: -20px; font-size: 0.8rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); text-decoration: underline; }
+        .article-content a:hover { color: var(--text-primary); }
+
+        /* PRODUCT CARD IN ARTICLE */
+        .product-mention { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px; margin: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .product-mention-info h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+        .product-mention-info p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+        .product-mention-price { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--accent); }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; font-size: 0.8rem; font-weight: 600; border: none; border-radius: 50px; cursor: pointer; transition: var(--transition); text-transform: uppercase; }
+        .btn-primary { background: var(--accent); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 229, 160, 0.3); }
+
+        /* RELATED */
+        .related-section { background: var(--bg-secondary); padding: 60px 0; border-top: 1px solid var(--border); }
+        .related-section h2 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; text-align: center; margin-bottom: 30px; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .related-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; text-align: center; transition: var(--transition); }
+        .related-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+        .related-card .icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .related-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+        .related-card p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* FOOTER */
+        footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 30px 0; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+        footer a { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .related-grid { grid-template-columns: 1fr; }
+            .product-mention { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🦕</span> JURASSIC<span>STORE</span></a>
+            <a href="index.html#blog" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+        </div>
+    </header>
+
+    <article>
+        <div class="container">
+            <div class="article-hero">
+                <span class="article-category">Guías</span>
+                <h1 class="article-title">Las 10 Figuras de Jurassic World que Todo Coleccionista Debe Tener</h1>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> 15 Mayo 2025</span>
+                    <span><i class="far fa-clock"></i> 8 min lectura</span>
+                    <span><i class="far fa-user"></i> Jurassic Fan Store</span>
+                </div>
+            </div>
+            <div class="article-image">🦖</div>
+            <div class="article-content">
+                <p>Si eres fan de la saga Jurassic Park/World, sabes que no hay mejor sensación que añadir una nueva figura a tu colección. Pero con tantas opciones en el mercado, ¿cuáles merecen realmente la pena? Después de años coleccionando y probando decenas de figuras, hemos preparado esta guía definitiva con las <strong>10 figuras imprescindibles</strong> que todo fan debería tener.</p>
+
+                <h2>1. Mattel Indominus Rex — Jurassic World Dominion</h2>
+                <p>La reina indiscutible. Esta figura de la Indominus Rex es impresionante: más de 18 puntos de articulación, mandíbula móvil, y un nivel de detalle que te dejará sin palabras. Mide unos 30 cm y es fiel a la película.</p>
+                <div class="product-mention">
+                    <div class="product-mention-info">
+                        <h4>Mattel Indominus Rex</h4>
+                        <p>Figura articulada · 30 cm · 18+ puntos de articulación</p>
+                    </div>
+                    <span class="product-mention-price">34,99€</span>
+                    <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary"><i class="fab fa-amazon"></i> Ver en Amazon</a>
+                </div>
+
+                <h2>2. Schleich T-Rex — Colección Dinosaurios</h2>
+                <p>Schleich es sinónimo de calidad. Su T-Rex es una obra de arte: pintado a mano, con detalles anatómicos precisos y un acabado que resiste el paso del tiempo. Perfecto tanto para niños como para coleccionistas adultos.</p>
+                <div class="product-mention">
+                    <div class="product-mention-info">
+                        <h4>Schleich T-Rex</h4>
+                        <p>Pintado a mano · Material resistente · Diseño científico</p>
+                    </div>
+                    <span class="product-mention-price">24,95€</span>
+                    <a href="https://www.amazon.es/dp/B08N5X3KQR?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary"><i class="fab fa-amazon"></i> Ver en Amazon</a>
+                </div>
+
+                <h2>3. LEGO Jurassic World — Emboscada del T-Rex (76956)</h2>
+                <p>¿A quién no le gusta LEGO? Este set combina dos pasiones: la construcción y los dinosaurios. 790 piezas, minifiguras de Owen y Claire, y un T-Rex espectacular. Ideal para pasar un buen rato construyendo.</p>
+                <div class="product-mention">
+                    <div class="product-mention-info">
+                        <h4>LEGO T-Rex Transport (76956)</h4>
+                        <p>790 piezas · A partir de 8 años · Incluye minifiguras</p>
+                    </div>
+                    <span class="product-mention-price">47,99€</span>
+                    <a href="https://www.amazon.es/dp/B08N5WWBQT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary"><i class="fab fa-amazon"></i> Ver en Amazon</a>
+                </div>
+
+                <h2>4. Velociraptor Blue — Mattel</h2>
+                <p>Blue es uno de los personajes más queridos de la trilogía nueva. Esta figura captura su esencia a la perfección: postura fiel a la película, detalles en los ojos y una base de exhibición que le da protagonismo.</p>
+
+                <h2>5. Hammond Collection — Huevo de Dinosaurio</h2>
+                <p>Si buscas algo verdaderamente premium, esta réplica del huevo de dinosaurio de la Hammond Collection es imprescindible. Viene con base de exhibición con luces LED y es una edición limitada.</p>
+                <div class="product-mention">
+                    <div class="product-mention-info">
+                        <h4>Hammond Collection — Huevo</h4>
+                        <p>Edición limitada · Base con luces LED · Coleccionismo</p>
+                    </div>
+                    <span class="product-mention-price">44,99€</span>
+                    <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary"><i class="fab fa-amazon"></i> Ver en Amazon</a>
+                </div>
+
+                <h2>6-10. Otras figuras imprescindibles</h2>
+                <ul>
+                    <li><strong>Mosasaurus Mattel</strong> — La bestia acuática de Jurassic World. Enorme y espectacular.</li>
+                    <li><strong>Indoraptor Mattel</strong> — El villano de Dominion. Oscuro, detallado y aterrador.</li>
+                    <li><strong>Stegosaurus Schleich</strong> — Un clásico que nunca pasa de moda.</li>
+                    <li><strong>Triceratops Mattel Dominion</strong> — Con heridas de batalla incluidas. Muy cinematográfico.</li>
+                    <li><strong>Pteranodon Hammond Collection</strong> — Para completar tu exhibición jurásica.</li>
+                </ul>
+
+                <h2>Consejos para coleccionistas</h2>
+                <p><strong>Presupuesto:</strong> No necesitas gastar una fortuna. Figuras como las de Schleich ofrecen excelente calidad por menos de 25€.</p>
+                <p><strong>Exhibición:</strong> Invierte en estantes o vitrinas. Una buena exhibición multiplica el impacto visual de tu colección.</p>
+                <p><strong>Estado:</strong> Si compras para coleccionar (no para jugar), mantén el embalaje. Las figuras en caja sellada valen más con el tiempo.</p>
+                <p><strong>Dónde comprar:</strong> Amazon suele tener los mejores precios y envío rápido. También revisa las ofertas en fechas señaladas como Prime Day o Black Friday.</p>
+
+                <p style="margin-top: 30px; padding: 20px; background: var(--accent-glow); border-radius: var(--radius-md); border-left: 4px solid var(--accent);">
+                    <strong>💡 ¿Quieres ver todas estas figuras?</strong> Visita nuestra <a href="index.html#productos">sección de productos</a> con enlaces directos a Amazon para comprar al mejor precio.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <section class="related-section">
+        <div class="container">
+            <h2>📚 Artículos Relacionados</h2>
+            <div class="related-grid">
+                <a href="articulo-curiosidades-jurassic-park.html" class="related-card">
+                    <div class="icon">🎬</div>
+                    <h3>Curiosidades de Jurassic Park</h3>
+                    <p>Datos que probablemente no conocías</p>
+                </a>
+                <a href="articulo-regalos-jurassic-park.html" class="related-card">
+                    <div class="icon">🎁</div>
+                    <h3>Mejores Regalos Jurassic Park</h3>
+                    <p>Para el Día del Padre y más</p>
+                </a>
+                <a href="index.html#productos" class="related-card">
+                    <div class="icon">🛒</div>
+                    <h3>Ver Todos los Productos</h3>
+                    <p>Figuras, ropa y coleccionismo</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Jurassic Fan Store · <a href="index.html">Volver a la tienda</a> · Producto afiliado de <a href="https://affiliate-program.amazon.es/" target="_blank">Amazon Associates</a></p>
+        </div>
+    </footer>
+</body>
+</html>

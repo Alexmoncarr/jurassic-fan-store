@@ -3,208 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="25 curiosidades fascinantes de Jurassic Park que probablemente no conocías. Datos sobre la película, los efectos especiales, los actores y la saga completa.">
-    <meta name="keywords" content="curiosidades jurassic park, datos jurassic park, secretos jurassic park, trivia jurassic park, datos curiosos dinosaurios, pelicula jurassic park">
-    <title>25 Curiosidades de Jurassic Park que Probablemente No Conocías | Jurassic Fan Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Curiosidades de Jurassic Park que probablemente no conocías. Detrás de cámaras, errores de grabación, datos sobre los dinosaurios reales y mucho más.">
+    <title>Curiosidades de Jurassic Park que Probablemente No Conocías — Jurassic Fan Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --primary: #2d5016; --secondary: #4a7c23; --accent: #c4a000; --dark: #1a1a1a; --light: #f5f5f0; }
-        body { font-family: 'Open Sans', sans-serif; background: var(--light); color: var(--dark); line-height: 1.8; }
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; }
-        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 15px 5%; }
-        header a { color: white; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; }
-        header a span { color: var(--accent); }
-        .article-hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1509281373149-e957c6296406?w=1600') center/cover; color: white; padding: 80px 20px; text-align: center; }
-        .article-hero h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
-        .article-hero .meta { opacity: 0.8; font-size: 0.9rem; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .container h2 { font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; margin: 40px 0 20px; color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; }
-        .container p { margin-bottom: 20px; font-size: 1.05rem; }
-        .curiosity { background: white; border-radius: 15px; padding: 25px; margin: 25px 0; box-shadow: 0 3px 15px rgba(0,0,0,0.08); border-left: 5px solid var(--accent); }
-        .curiosity .number { font-family: 'Oswald', sans-serif; font-size: 2rem; color: var(--accent); font-weight: 700; }
-        .curiosity h3 { font-size: 1.2rem; margin: 10px 0; color: var(--secondary); }
-        .cta-box { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 40px 0; }
-        .cta-box h3 { color: white; margin-bottom: 15px; }
-        .cta-box .btn { background: var(--accent); color: var(--dark); padding: 12px 30px; text-decoration: none; font-weight: 700; border-radius: 25px; display: inline-block; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        footer { background: var(--dark); color: white; text-align: center; padding: 30px; font-size: 0.85rem; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a26;
+            --border: #2a2a3a;
+            --text-primary: #f0f0f5;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6a6a80;
+            --accent: #00e5a0;
+            --accent-glow: rgba(0, 229, 160, 0.15);
+            --danger: #ff4757;
+            --warning: #ffa502;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        header { background: rgba(10, 10, 15, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1320px; margin: 0 auto; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 900; color: var(--text-primary); letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--accent); }
+        .logo-icon { font-size: 1.6rem; }
+        .back-link { color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: var(--transition); }
+        .back-link:hover { color: var(--accent); }
+        .article-hero { padding: 60px 0 40px; text-align: center; }
+        .article-category { display: inline-block; padding: 6px 18px; background: var(--accent); color: var(--bg-primary); border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+        .article-title { font-family: 'Orbitron', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+        .article-meta { display: flex; justify-content: center; gap: 24px; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 40px; }
+        .article-meta span { display: flex; align-items: center; gap: 6px; }
+        .article-image { width: 100%; height: 300px; background: linear-gradient(135deg, #1a2a1a, #0a1a0a); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 6rem; margin-bottom: 40px; }
+        .article-content { padding-bottom: 80px; }
+        .article-content h2 { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--accent); margin: 40px 0 16px; }
+        .article-content h3 { font-size: 1.15rem; font-weight: 700; margin: 30px 0 12px; }
+        .article-content p { color: var(--text-secondary); margin-bottom: 16px; font-size: 1.05rem; }
+        .article-content ul { margin: 16px 0 24px 24px; }
+        .article-content ul li { color: var(--text-secondary); margin-bottom: 12px; position: relative; padding-left: 8px; }
+        .article-content ul li::before { content: '🎬'; position: absolute; left: -24px; font-size: 0.9rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); text-decoration: underline; }
+        .article-content a:hover { color: var(--text-primary); }
+        .fun-fact { background: var(--bg-card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius-md); padding: 20px 24px; margin: 24px 0; }
+        .fun-fact h4 { color: var(--accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+        .fun-fact p { margin: 0; }
+        .related-section { background: var(--bg-secondary); padding: 60px 0; border-top: 1px solid var(--border); }
+        .related-section h2 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; text-align: center; margin-bottom: 30px; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .related-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; text-align: center; transition: var(--transition); }
+        .related-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+        .related-card .icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .related-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+        .related-card p { font-size: 0.8rem; color: var(--text-muted); }
+        footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 30px 0; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
         footer a { color: var(--accent); }
+        @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <header><a href="index.html">Jurassic <span>Fan Store</span></a></header>
-    <div class="article-hero">
-        <h1>🦕 25 Curiosidades de Jurassic Park que No Conocías</h1>
-        <div class="meta"><span>📅 18 Mayo 2026</span> <span>📖 15 min lectura</span> <span>🏷️ Curiosidades, Películas</span></div>
-    </div>
-    <div class="container">
-        <p>Desde su estreno en 1993, <strong>Jurassic Park</strong> ha sido mucho más que una película: es un fenómeno cultural que cambió para siempre el cine y nuestra forma de ver a los dinosaurios. Pero incluso los fans más devotos desconocen muchos detalles fascinantes sobre la saga.</p>
-        <p>Hemos recopilado <strong>25 curiosidades</strong> que te sorprenderán, desde secretos de rodaje hasta datos científicos que Spielberg escondió en la película.</p>
-
-        <h2>🎬 Curiosidades del Rodaje</h2>
-
-        <div class="curiosity">
-            <div class="number">1</div>
-            <h3>El rugido del T-Rex es una mezcla de 5 animales</h3>
-            <p>El icónico rugido del Tyrannosaurus Rex fue creado mezclando sonidos de un elefante bebé, un caimán, un pug, un tigre y una jirafa. El diseñador de sonido Gary Rydstrom tardó meses en conseguir el sonido perfecto.</p>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🦕</span> JURASSIC<span>STORE</span></a>
+            <a href="index.html#blog" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
         </div>
+    </header>
 
-        <div class="curiosity">
-            <div class="number">2</div>
-            <h3>La escena de la cocina con los velocirraptores fue la última en filmarse</h3>
-            <p>Steven Spielberg dejó esta escena icónica para el final del rodaje porque sabía que sería la más difícil. Los actores infantiles (Joseph Mazzello y Ariana Richards) tuvieron que estar horas en posición de tensión.</p>
+    <article>
+        <div class="container">
+            <div class="article-hero">
+                <span class="article-category">Cine</span>
+                <h1 class="article-title">Curiosidades de Jurassic Park que Probablemente No Conocías</h1>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> 10 Mayo 2025</span>
+                    <span><i class="far fa-clock"></i> 12 min lectura</span>
+                    <span><i class="far fa-user"></i> Jurassic Fan Store</span>
+                </div>
+            </div>
+            <div class="article-image">🎬</div>
+            <div class="article-content">
+                <p><strong>Jurassic Park</strong> (1993) no solo cambió el cine para siempre, sino que generó una de las sagas más queridas de la historia. Pero incluso los fans más acérrimos desconocen muchos detalles sobre la producción. Aquí van las curiosidades más fascinantes.</p>
+
+                <div class="fun-fact">
+                    <h4>🦖 Dato curioso #1</h4>
+                    <p>La icónica escena de la cocina con los velociraptors fue filmada durante una tormenta eléctrica real. Spielberg apagó las luces del set y siguió grabando. Esa tensión real se nota en la pantalla.</p>
+                </div>
+
+                <h2>1. El sonido del T-Rex</h2>
+                <p>El rugido del T-Rex es uno de los sonidos más reconocibles del cine. Pero no es un solo animal: es una mezcla de <strong>elefante, tigre, caimán y pavo real</strong>. El diseñador de sonido Gary Rydstrom combinó todos estos sonidos para crear algo completamente nuevo y aterrador.</p>
+
+                <h2>2. El diluvio de la escena del vaso de agua</h2>
+                <p>¿Recuerdas la escena donde el vaso de agua vibra por las pisadas del T-Rex? Ese efecto fue creado accidentalmente cuando el operador de cámara pisó un cable. Spielberg decidió mantenerlo porque era perfecto.</p>
+
+                <div class="fun-fact">
+                    <h4>🦖 Dato curioso #2</h4>
+                    <p>Jeff Goldblum (Dr. Ian Malcolm) improvisó la mayoría de sus frases. La famosa "Life finds a way" fue parcialmente improvisada durante el rodaje.</p>
+                </div>
+
+                <h2>3. Los dinosaurios reales que inspiraron la película</h2>
+                <p>Michael Crichton se basó en descubrimientos reales de paleontólogos como <strong>Jack Horner</strong> y <strong>Robert Bakker</strong>. La idea de que los dinosaurios eran más parejos a aves que a reptiles era revolucionaria en los años 90.</p>
+                <p>De hecho, hoy sabemos que Crichton acertó en muchas cosas: los velociraptors probablemente tenían plumas, y el T-Rex era más rápido de lo que se creía.</p>
+
+                <h2>4. Errores de grabación que se quedaron</h2>
+                <ul>
+                    <li>En la escena del Gallimimus, se puede ver un dinosaurio tropezando. Se dejó porque parecía realista.</li>
+                    <li>El reflejo del T-Rex se ve en el cristal del Jeep en varias escenas.</li>
+                    <li>En la escena del Brachiosaurus, se puede ver un miembro del equipo en la esquina superior.</li>
+                </ul>
+
+                <h2>5. La escena eliminada más famosa</h2>
+                <p>Originalmente había una escena donde los velociraptors cazaban en los tejados de la instalación. Fue eliminada por problemas de presupuesto, pero Spielberg ha dicho que es la escena que más lamenta no haber incluido.</p>
+
+                <div class="fun-fact">
+                    <h4>🦖 Dato curioso #3</h4>
+                    <p>La película costó 63 millones de dólares y recaudó más de 1.000 millones en todo el mundo. Fue la película más taquillera de la historia hasta que Titanic la superó en 1997.</p>
+                </div>
+
+                <h2>6. El legado de Stan Winston</h2>
+                <p>El genio detrás de los efectos prácticos fue <strong>Stan Winston</strong>, quien creó los animatrónicos que hicieron posible la película. Su trabajo fue tan impresionante que, 30 años después, las escenas con dinosaurios reales siguen siendo las más impactantes de toda la saga.</p>
+
+                <h2>7. ¿Sabías que...?</h2>
+                <ul>
+                    <li>El nombre "Jurásico" es un error geológico. La mayoría de los dinosaurios de la película son del período Cretácico, no Jurásico.</li>
+                    <li>La novela de Crichton se escribió en solo 3 años.</li>
+                    <li>Spielberg rodó Jurassic Park y La Lista de Schindler simultáneamente.</li>
+                    <li>El ADN de la película usa ADN de rana para rellenar los huecos. Hoy sabemos que habría causado problemas reales.</li>
+                </ul>
+
+                <p style="margin-top: 30px; padding: 20px; background: var(--accent-glow); border-radius: var(--radius-md); border-left: 4px solid var(--accent);">
+                    <strong>🎬 ¿Quieres revivir la magia?</strong> La saga completa en 4K Ultra HD está disponible en Amazon con un descuento increíble. <a href="index.html#productos">Ver ofertas de películas →</a>
+                </p>
+            </div>
         </div>
+    </article>
 
-        <div class="curiosity">
-            <div class="number">3</div>
-            <h3>El Dilophosaurus era mucho más grande en el guion original</h3>
-            <p>En el guion original, el Dilophosaurus medía 3 metros. Spielberg lo redujo a tamaño humano para que pudiera perseguir a Nedry por el jeep. La capucha se añadió porque el dinosaurio real probablemente no la tenía.</p>
+    <section class="related-section">
+        <div class="container">
+            <h2>📚 Artículos Relacionados</h2>
+            <div class="related-grid">
+                <a href="articulo-figuras-jurassic-world.html" class="related-card">
+                    <div class="icon">🦖</div>
+                    <h3>Top 10 Figuras Jurassic World</h3>
+                    <p>Guía para coleccionistas</p>
+                </a>
+                <a href="articulo-regalos-jurassic-park.html" class="related-card">
+                    <div class="icon">🎁</div>
+                    <h3>Mejores Regalos Jurassic Park</h3>
+                    <p>Para el Día del Padre y más</p>
+                </a>
+                <a href="index.html#productos" class="related-card">
+                    <div class="icon">🛒</div>
+                    <h3>Ver Todos los Productos</h3>
+                    <p>Figuras, ropa y coleccionismo</p>
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="curiosity">
-            <div class="number">4</div>
-            <h3>Jeff Goldblum improvisó su famosa frase</h3>
-            <p>"Must go faster" fue improvisada por Jeff Goldblum durante el rodaje de la escena del jeep. Spielberg la dejó porque le pareció perfecta para el personaje de Ian Malcolm.</p>
+    <footer>
+        <div class="container">
+            <p>© 2025 Jurassic Fan Store · <a href="index.html">Volver a la tienda</a> · Producto afiliado de <a href="https://affiliate-program.amazon.es/" target="_blank">Amazon Associates</a></p>
         </div>
-
-        <div class="curiosity">
-            <div class="number">5</div>
-            <h3>El T-Rex animatrónico pesaba 12 toneladas</h3>
-            <p>El animatrónico del T-Rex utilizado en la película pesaba 12.000 kg y requería 23 personas para operarlo. Se rompió varias veces durante el rodaje, lo que obligó a reescribir escenas.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">6</div>
-            <h3>La lluvia durante el ataque del T-Rex era real</h3>
-            <p>La famosa escena del ataque del T-Rex se filmó durante una tormenta tropical real en Hawái. Spielberg aprovechó la lluvia natural para darle más realismo a la secuencia.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">7</div>
-            <h3>Sam Neill casi muere durante el rodaje</h3>
-            <p>Durante la escena del jeep, un cable se rompió y el vehículo cayó sobre Sam Neill. Solo sufrió contusiones, pero fue un momento muy peligroso.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">8</div>
-            <h3>Los sonidos de los dinosaurios se crearon con animales reales</h3>
-            <p>Cada dinosaurio tiene una combinación única de sonidos animales: el Triceratops usa sonidos de cabra, el Brachiosaurus de ballena jorobada, y el Velocirraptor de tortugas apareándose.</p>
-        </div>
-
-        <h2>🦖 Curiosidades Científicas</h2>
-
-        <div class="curiosity">
-            <div class="number">9</div>
-            <h3>Los dinosaurios de Jurassic Park no se parecen a los reales</h3>
-            <p>Desde 1993, la paleontología ha avanzado enormemente. Ahora sabemos que muchos dinosaurios tenían plumas. Los velocraptores reales eran del tamaño de un pavo y probablemente estaban cubiertos de plumas.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">10</div>
-            <h3>El ADN de mosquito no podría revivir dinosaurios</h3>
-            <p>El ADN tiene una vida media de 521 años. Después de 65 millones de años, no quedaría nada de ADN viable en un mosquito atrapado en ámbar. ¡La ciencia de la película es ficción!</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">11</div>
-            <h3>El T-Rex probablemente no podía ver si no te movías</h3>
-            <p>La idea de que el T-Rex solo ve movimiento es un mito de la película. En realidad, el T-Rex tenía una excelente visión binocular, mejor que la de las águilas actuales.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">12</div>
-            <h3>El dinosaurio más grande de la saga no es el T-Rex</h3>
-            <p>El Spinosaurus de Jurassic Park III era más grande que el T-Rex, con 15-16 metros de largo. Sin embargo, el Giganotosaurus real era aún más grande, con hasta 13 metros.</p>
-        </div>
-
-        <h2>🎥 Curiosidades de la Saga</h2>
-
-        <div class="curiosity">
-            <div class="number">13</div>
-            <h3>Jurassic Park fue la primera película con sonido digital</h3>
-            <p>Jurassic Park fue la primera película en usar el sistema de sonido DTS en cines, revolucionando la experiencia sonora del cine.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">14</div>
-            <h3>La película costó 63 millones y recaudó 1.034 millones</h3>
-            <p>Con un retorno de más de 16 veces su presupuesto, Jurassic Park fue la película más taquillera de la historia hasta que Titanic la superó en 1997.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">15</div>
-            <h3>Michael Crichton escribió el guion en 3 meses</h3>
-            <p>El autor de la novela original, Michael Crichton, escribió el guion de la película en solo 3 meses, aunque Spielberg hizo cambios significativos.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">16</div>
-            <h3>El parque de Isla Nublar está inspirado en un parque real</h3>
-            <p>Spielberg se inspiró en el parque temático de Universal Studios en Orlando para diseñar el parque de Jurassic Park. De hecho, hay una atracción de Jurassic Park allí desde 1996.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">17</div>
-            <h3>Laura Dern casi no acepta el papel de Ellie Sattler</h3>
-            <p>Laura Dern dudó en aceptar el papel porque quería hacer películas más "serias". Spielberg la convenció argumentando que Ellie sería una heroína de acción real.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">18</div>
-            <h3>El logo de Jurassic Park fue diseñado en una servilleta</h3>
-            <p>El icónico logo del esqueleto de T-Rex dentro de un círculo fue diseñado por Chip Kidd, el diseñador de la portada del libro, en una servilleta de un restaurante.</p>
-        </div>
-
-        <h2>🌍 Curiosidades de Jurassic World</h2>
-
-        <div class="curiosity">
-            <div class="number">19</div>
-            <h3>Chris Pratt fue elegido porque comía un pollo en una escena</h3>
-            <p>Spielberg eligió a Chris Pratt para Owen Grady después de ver una escena de Guardians of the Galaxy donde comía un pollo con las manos. Le pareció perfecto para un entrenador de velocirraptores.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">20</div>
-            <h3>El Indominus Rex fue diseñado por un paleontólogo</h3>
-            <p>El diseño del Indominus Rex fue supervisado por el paleontólogo Jack Horner, que también asesoró en las películas originales.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">21</div>
-            <h3>La escena del Mosasaurus se filmó en un acuario real</h3>
-            <p>La escena donde el Mosasaurus devora al tiburón fue filmada parcialmente en el acuario de la bahía de Monterey, usando técnicas de croma.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">22</div>
-            <h3>Blue la Velocirraptor tiene nombre real</h3>
-            <p>Blue no es solo un nombre de personaje: en la película, Owen la llama así por el color de sus ojos. En la vida real, algunos dinosaurios tenían ojos de colores brillantes.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">23</div>
-            <h3>Jurassic World costó 150 millones y recaudó 1.670 millones</h3>
-            <p>La cuarta película de la saga fue un éxito rotundo, convirtiéndose en la tercera película más taquillera de 2015.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">24</div>
-            <h3>Hay más de 200 errores de continuidad en la saga</h3>
-            <p>Desde cambios de color en la ropa hasta dinosaurios que cambian de tamaño entre planos, la saga tiene más de 200 errores de continuidad documentados por fans.</p>
-        </div>
-
-        <div class="curiosity">
-            <div class="number">25</div>
-            <h3>La saga completa ha recaudado más de 6.000 millones de dólares</h3>
-            <p>Con 6 películas estrenadas (y más en camino), la franquicia Jurassic Park/World ha recaudado más de 6.000 millones de dólares en todo el mundo, convirtiéndola en una de las franquicias más exitosas de la historia del cine.</p>
-        </div>
-
-        <div class="cta-box">
-            <h3>🦖 ¿Eres un verdadero fan de Jurassic Park?</h3>
-            <p>Demuéstralo con nuestra colección de figuras, ropa y artículos de coleccionismo oficiales.</p>
-            <a href="index.html" class="btn">Visitar la Tienda</a>
-        </div>
-    </div>
-    <footer><p>© 2026 Jurassic Fan Store. <a href="index.html">Volver a la tienda</a></p></footer>
+    </footer>
 </body>
 </html>

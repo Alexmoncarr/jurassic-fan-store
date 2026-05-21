@@ -3,165 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Los mejores regalos de Jurassic Park para fans en 2026. Guía completa con opciones para todos los presupuestos: figuras, ropa, juegos, decoración y coleccionismo.">
-    <meta name="keywords" content="regalos jurassic park, regalos jurassic world, regalos dinosaurios, regalos fans jurassic, ideas regalos jurassic, comprar regalos dinosaurios">
-    <title>Los Mejores Regalos de Jurassic Park para Fans (Guía 2026) | Jurassic Fan Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Los mejores regalos de Jurassic Park para el Día del Padre y cualquier ocasión. Figuras, ropa, decoración y coleccionismo para fans de los dinosaurios.">
+    <title>Los Mejores Regalos de Jurassic Park para el Día del Padre — Jurassic Fan Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --primary: #2d5016; --secondary: #4a7c23; --accent: #c4a000; --dark: #1a1a1a; --light: #f5f5f0; }
-        body { font-family: 'Open Sans', sans-serif; background: var(--light); color: var(--dark); line-height: 1.8; }
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; }
-        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 15px 5%; }
-        header a { color: white; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; }
-        header a span { color: var(--accent); }
-        .article-hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1535025639604-9a804c092faa?w=1600') center/cover; color: white; padding: 80px 20px; text-align: center; }
-        .article-hero h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .container h2 { font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; margin: 40px 0 20px; color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; }
-        .container p { margin-bottom: 20px; font-size: 1.05rem; }
-        .gift-section { background: white; border-radius: 15px; padding: 30px; margin: 30px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-        .gift-section h3 { color: var(--secondary); margin-bottom: 20px; }
-        .gift-item { display: flex; gap: 15px; padding: 15px 0; border-bottom: 1px solid #eee; }
-        .gift-item:last-child { border-bottom: none; }
-        .gift-item .emoji { font-size: 2rem; min-width: 40px; }
-        .gift-item .info h4 { font-size: 1rem; margin-bottom: 5px; }
-        .gift-item .info .price { color: var(--primary); font-weight: 700; }
-        .gift-item .info .btn { display: inline-block; padding: 5px 15px; background: var(--accent); color: var(--dark); text-decoration: none; font-weight: 600; border-radius: 15px; font-size: 0.8rem; margin-top: 5px; }
-        .budget-tag { display: inline-block; padding: 3px 10px; border-radius: 10px; font-size: 0.75rem; font-weight: 600; }
-        .budget-low { background: #d4edda; color: #155724; }
-        .budget-mid { background: #fff3cd; color: #664d03; }
-        .budget-high { background: #f8d7da; color: #842029; }
-        .cta-box { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border-radius: 15px; padding: 30px; text-align: center; margin: 40px 0; }
-        .cta-box h3 { color: white; margin-bottom: 15px; }
-        .cta-box .btn { background: var(--accent); color: var(--dark); padding: 12px 30px; text-decoration: none; font-weight: 700; border-radius: 25px; display: inline-block; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        footer { background: var(--dark); color: white; text-align: center; padding: 30px; font-size: 0.85rem; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a26;
+            --border: #2a2a3a;
+            --text-primary: #f0f0f5;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6a6a80;
+            --accent: #00e5a0;
+            --accent-glow: rgba(0, 229, 160, 0.15);
+            --danger: #ff4757;
+            --warning: #ffa502;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        header { background: rgba(10, 10, 15, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1320px; margin: 0 auto; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 900; color: var(--text-primary); letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--accent); }
+        .logo-icon { font-size: 1.6rem; }
+        .back-link { color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: var(--transition); }
+        .back-link:hover { color: var(--accent); }
+        .article-hero { padding: 60px 0 40px; text-align: center; }
+        .article-category { display: inline-block; padding: 6px 18px; background: var(--accent); color: var(--bg-primary); border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+        .article-title { font-family: 'Orbitron', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+        .article-meta { display: flex; justify-content: center; gap: 24px; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 40px; }
+        .article-meta span { display: flex; align-items: center; gap: 6px; }
+        .article-image { width: 100%; height: 300px; background: linear-gradient(135deg, #1a2a1a, #0a1a0a); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 6rem; margin-bottom: 40px; }
+        .article-content { padding-bottom: 80px; }
+        .article-content h2 { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--accent); margin: 40px 0 16px; }
+        .article-content h3 { font-size: 1.15rem; font-weight: 700; margin: 30px 0 12px; }
+        .article-content p { color: var(--text-secondary); margin-bottom: 16px; font-size: 1.05rem; }
+        .article-content ul { margin: 16px 0 24px 24px; }
+        .article-content ul li { color: var(--text-secondary); margin-bottom: 12px; position: relative; padding-left: 8px; }
+        .article-content ul li::before { content: '🎁'; position: absolute; left: -24px; font-size: 0.9rem; }
+        .article-content strong { color: var(--text-primary); }
+        .article-content a { color: var(--accent); text-decoration: underline; }
+        .article-content a:hover { color: var(--text-primary); }
+        .gift-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; margin: 24px 0; }
+        .gift-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+        .gift-card-icon { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(0, 229, 160, 0.1); border-radius: 50%; font-size: 1.5rem; }
+        .gift-card h3 { margin: 0; font-size: 1.1rem; }
+        .gift-card h3 span { font-size: 0.8rem; color: var(--text-muted); font-weight: 400; }
+        .gift-card p { margin-bottom: 16px; }
+        .gift-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .gift-price { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; font-size: 0.8rem; font-weight: 600; border: none; border-radius: 50px; cursor: pointer; transition: var(--transition); text-transform: uppercase; }
+        .btn-primary { background: var(--accent); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 229, 160, 0.3); }
+        .budget-section { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+        .budget-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; }
+        .budget-card .icon { font-size: 2rem; margin-bottom: 8px; }
+        .budget-card h4 { font-size: 0.9rem; margin-bottom: 4px; }
+        .budget-card .price { font-family: 'Orbitron', sans-serif; color: var(--accent); font-weight: 700; }
+        .related-section { background: var(--bg-secondary); padding: 60px 0; border-top: 1px solid var(--border); }
+        .related-section h2 { font-family: 'Orbitron', sans-serif; font-size: 1.3rem; text-align: center; margin-bottom: 30px; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .related-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; text-align: center; transition: var(--transition); }
+        .related-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+        .related-card .icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .related-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+        .related-card p { font-size: 0.8rem; color: var(--text-muted); }
+        footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 30px 0; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
         footer a { color: var(--accent); }
+        @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } .budget-section { grid-template-columns: 1fr; } .gift-card-footer { flex-direction: column; } }
     </style>
 </head>
 <body>
-    <header><a href="index.html">Jurassic <span>Fan Store</span></a></header>
-    <div class="article-hero">
-        <h1>🎁 Los Mejores Regalos de Jurassic Park para Fans</h1>
-        <p style="opacity:0.8;">Guía 2026 con opciones para todos los presupuestos</p>
-    </div>
-    <div class="container">
-        <p>¿Tienes un fan de Jurassic Park en tu vida y no sabes qué regalarle? No te preocupes, hemos preparado la <strong>guía definitiva de regalos</strong> para todos los presupuestos y edades. Desde figuras de acción hasta ropa, juegos y artículos de coleccionismo.</p>
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🦕</span> JURASSIC<span>STORE</span></a>
+            <a href="index.html#blog" class="back-link"><i class="fas fa-arrow-left"></i> Volver al blog</a>
+        </div>
+    </header>
 
-        <div class="gift-section">
-            <h3>💰 Regalos Económicos (Menos de 20€)</h3>
-            <div class="gift-item">
-                <div class="emoji">🦏</div>
-                <div class="info">
-                    <h4>Figura Schleich Dinosaurio</h4>
-                    <span class="budget-tag budget-low">10-15€</span>
-                    <p class="price">12.99€</p>
-                    <p>Calidad premium, pintado a mano. Perfecto para niños y coleccionistas.</p>
-                    <a href="https://www.amazon.es/dp/B005UJ7X5A?tag=jurassicfan-21" class="btn" target="_blank">Ver en Amazon</a>
+    <article>
+        <div class="container">
+            <div class="article-hero">
+                <span class="article-category">Regalos</span>
+                <h1 class="article-title">Los Mejores Regalos de Jurassic Park para el Día del Padre</h1>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> 5 Mayo 2025</span>
+                    <span><i class="far fa-clock"></i> 6 min lectura</span>
+                    <span><i class="far fa-user"></i> Jurassic Fan Store</span>
                 </div>
             </div>
-            <div class="gift-item">
-                <div class="emoji">🧩</div>
-                <div class="info">
-                    <h4>Puzzle 1000 Piezas Isla Nublar</h4>
-                    <span class="budget-tag budget-low">15-20€</span>
-                    <p class="price">19.99€</p>
-                    <p>Puzzle de alta calidad con el mapa del parque. Ideal para fans adultos.</p>
-                    <a href="https://www.amazon.es/dp/B08N5M7S6K?tag=jurassicfan-21" class="btn" target="_blank">Ver en Amazon</a>
+            <div class="article-image">🎁</div>
+            <div class="article-content">
+                <p>¿Tu padre es fan de los dinosaurios? ¿Creció viendo Jurassic Park y todavía se emociona con el rugido del T-Rex? Entonces estás en el lugar correcto. Hemos preparado la <strong>guía definitiva de regalos</strong> para el padre jurásico, con opciones para todos los presupuestos.</p>
+
+                <h2>Presupuestos por nivel</h2>
+                <div class="budget-section">
+                    <div class="budget-card">
+                        <div class="icon">💰</div>
+                        <h4>Económico</h4>
+                        <div class="price">Menos de 20€</div>
+                    </div>
+                    <div class="budget-card">
+                        <div class="icon">💰💰</div>
+                        <h4>Intermedio</h4>
+                        <div class="price">20€ — 40€</div>
+                    </div>
+                    <div class="budget-card">
+                        <div class="icon">💰💰💰</div>
+                        <h4>Premium</h4>
+                        <div class="price">Más de 40€</div>
+                    </div>
                 </div>
-            </div>
-            <div class="gift-item">
-                <div class="emoji">📖</div>
-                <div class="info">
-                    <h4>Novela Jurassic Park - Michael Crichton</h4>
-                    <span class="budget-tag budget-low">15-20€</span>
-                    <p class="price">18.95€</p>
-                    <p>La novela original que empezó todo. Más detallada que la película.</p>
-                    <a href="https://www.amazon.es/dp/8401026568?tag=jurassicfan-21" class="btn" target="_blank">Ver en Amazon</a>
+
+                <h2>🎁 Regalos Económicos (Menos de 20€)</h2>
+                <div class="gift-card">
+                    <div class="gift-card-header">
+                        <div class="gift-card-icon">👕</div>
+                        <h3>Camiseta Jurassic Park — Logo Clásico</h3>
+                    </div>
+                    <p>La camiseta con el logo del parque es un clásico que nunca falla. 100% algodón, cómoda y con un diseño que cualquier fan reconocerá al instante.</p>
+                    <div class="gift-card-footer">
+                        <span class="gift-price">19,99€</span>
+                        <a href="https://www.amazon.es/dp/B09FLM8N8R?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary"><i class="fab fa-amazon"></i> Comprar en Amazon</a>
+                    </div>
                 </div>
+
+                <div class="gift-card">
+                    <div class="gift-card-header">
+                        <div class="gift-card-icon">📚</div>
+                        <h3>Novela El Mundo Perdido — Michael Crichton</h3>
+                    </div>
+                    <p>Si tu padre es lector, la novela original de Crichton es un regalo perfecto. Edición especial del 30 aniversario con ilustraciones inéditas.</p>
+                    <div class="gift-card-footer">
+                        <span class="gift-price">14,99€</span>
+                        <a href="https://www.amazon.es/dp/B08GHI3456?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary"><i class="fab fa-amazon"></i> Comprar en Amazon</a>
+                    </div>
+                </div>
+
+                <h2>🎁 Regalos Intermedios (20€ — 40€)</h2>
+                <div class="gift-card">
+                    <div class="gift-card-header">
+                        <div class="gift-card-icon">🦕</div>
+                        <h3>Figura Schleich T-Rex</h3>
+                    </div>
+                    <p>Las figuras de Schleich son sinónimo de calidad. Este T-Rex pintado a mano es perfecto para la escritorio de tu padre o para añadir a su colección.</p>
+                    <div class="gift-card-footer">
+                        <span class="gift-price">24,95€</span>
+                        <a href="https://www.amazon.es/dp/B08N5X3KQR?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary"><i class="fab fa-amazon"></i> Comprar en Amazon</a>
+                    </div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-card-header">
+                        <div class="gift-card-icon">🎲</div>
+                        <h3>Juego de Mesa Jurassic World</h3>
+                    </div>
+                    <p>Un juego de mesa temático para pasar tiempo en familia. Construye tu parque de dinosaurios y sobrevive a los escapes. Para 2-4 jugadores.</p>
+                    <div class="gift-card-footer">
+                        <span class="gift-price">29,99€</span>
+                        <a href="https://www.amazon.es/dp/B08ABC5678?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary"><i class="fab fa-amazon"></i> Comprar en Amazon</a>
+                    </div>
+                </div>
+
+                <h2>🎁 Regalos Premium (Más de 40€)</h2>
+                <div class="gift-card">
+                    <div class="gift-card-header">
+                        <div class="gift-card-icon">🦖</div>
+                        <h3>Mattel Indominus Rex — Dominion</h3>
+                    </div>
+                    <p>La figura más impresionante de la saga Dominion. 18 puntos de articulación, 30 cm de altura y un nivel de detalle espectacular. El regalo definitivo.</p>
+                    <div class="gift-card-footer">
+                        <span class="gift-price">34,99€</span>
+                        <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary"><i class="fab fa-amazon"></i> Comprar en Amazon</a>
+                    </div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-card-header">
+                        <div class="gift-card-icon">🎬</div>
+                        <h3>Saga Completa Jurassic Park — 4K Ultra HD</h3>
+                    </div>
+                    <p>Las 6 películas en 4K Ultra HD con HDR. Incluye contenido extra, escenas eliminadas y documentales. El regalo perfecto para revivir la saga.</p>
+                    <div class="gift-card-footer">
+                        <span class="gift-price">59,99€</span>
+                        <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary"><i class="fab fa-amazon"></i> Comprar en Amazon</a>
+                    </div>
+                </div>
+
+                <h2>💡 Consejos extra</h2>
+                <ul>
+                    <li><strong>Envío Prime:</strong> Amazon ofrece envío en 1 día para la mayoría de estos productos.</li>
+                    <li><strong>Tarjeta regalo:</strong> Si no estás seguro, una tarjeta regalo de Amazon siempre es una buena opción.</li>
+                    <li><strong>Combos:</strong> Combina varios regalos económicos para hacer un pack jurásico completo.</li>
+                    <li><strong>Fechas clave:</strong> Prime Day (julio) y Black Friday (noviembre) son las mejores fechas para encontrar descuentos.</li>
+                </ul>
+
+                <p style="margin-top: 30px; padding: 20px; background: var(--accent-glow); border-radius: var(--radius-md); border-left: 4px solid var(--accent);">
+                    <strong>🦖 Encuentra todos estos productos</strong> en nuestra <a href="index.html#productos">tienda online</a> con enlaces directos a Amazon y los mejores precios.
+                </p>
             </div>
         </div>
+    </article>
 
-        <div class="gift-section">
-            <h3>💰💰 Regalos de Gama Media (20-50€)</h3>
-            <div class="gift-item">
-                <div class="emoji">🦖</div>
-                <div class="info">
-                    <h4>Indominus Rex Gigante Mattel</h4>
-                    <span class="budget-tag budget-mid">40-50€</span>
-                    <p class="price">49.99€</p>
-                    <p>La estrella de cualquier colección. Más de 60 cm con sonidos y movimiento.</p>
-                    <a href="https://www.amazon.es/dp/B0BVHQNQYM?tag=jurassicfan-21" class="btn" target="_blank">Ver en Amazon</a>
-                </div>
-            </div>
-            <div class="gift-item">
-                <div class="emoji">👕</div>
-                <div class="info">
-                    <h4>Camiseta Jurassic Park Classic</h4>
-                    <span class="budget-tag budget-mid">20-30€</span>
-                    <p class="price">24.99€</p>
-                    <p>El logo clásico en algodón 100%. Disponible en todas las tallas.</p>
-                    <a href="https://www.amazon.es/dp/B09Q5XJLZN?tag=jurassicfan-21" class="btn" target="_blank">Ver en Amazon</a>
-                </div>
-            </div>
-            <div class="gift-item">
-                <div class="emoji">🎮</div>
-                <div class="info">
-                    <h4>Juego de Mesa Jurassic World</h4>
-                    <span class="budget-tag budget-mid">25-35€</span>
-                    <p class="price">29.99€</p>
-                    <p>Para 2-4 jugadores. Construye tu propio parque de dinosaurios.</p>
-                    <a href="https://www.amazon.es/dp/B07XYZ5678?tag=jurassicfan-21" class="btn" target="_blank">Ver en Amazon</a>
-                </div>
+    <section class="related-section">
+        <div class="container">
+            <h2>📚 Artículos Relacionados</h2>
+            <div class="related-grid">
+                <a href="articulo-figuras-jurassic-world.html" class="related-card">
+                    <div class="icon">🦖</div>
+                    <h3>Top 10 Figuras Jurassic World</h3>
+                    <p>Guía para coleccionistas</p>
+                </a>
+                <a href="articulo-curiosidades-jurassic-park.html" class="related-card">
+                    <div class="icon">🎬</div>
+                    <h3>Curiosidades de Jurassic Park</h3>
+                    <p>Datos que no conocías</p>
+                </a>
+                <a href="index.html#productos" class="related-card">
+                    <div class="icon">🛒</div>
+                    <h3>Ver Todos los Productos</h3>
+                    <p>Figuras, ropa y coleccionismo</p>
+                </a>
             </div>
         </div>
+    </section>
 
-        <div class="gift-section">
-            <h3>💰💰💰 Regalos Premium (Más de 50€)</h3>
-            <div class="gift-item">
-                <div class="emoji">💎</div>
-                <div class="info">
-                    <h4>Réplica Diente T-Rex en Plata</h4>
-                    <span class="budget-tag budget-high">80-100€</span>
-                    <p class="price">89.99€</p>
-                    <p>Pieza de coleccionismo en plata de ley con certificado de autenticidad.</p>
-                    <a href="https://www.amazon.es/dp/B0C1H2KLP9?tag=jurassicfan-21" class="btn" target="_blank">Ver en Amazon</a>
-                </div>
-            </div>
-            <div class="gift-item">
-                <div class="emoji">📀</div>
-                <div class="info">
-                    <h4>Saga Completa Jurassic Park 4K Ultra HD</h4>
-                    <span class="budget-tag budget-high">50-70€</span>
-                    <p class="price">59.99€</p>
-                    <p>Las 6 películas en 4K con contenido extra y documentales.</p>
-                    <a href="https://www.amazon.es/dp/B09XYZ1234?tag=jurassicfan-21" class="btn" target="_blank">Ver en Amazon</a>
-                </div>
-            </div>
-            <div class="gift-item">
-                <div class="emoji">🖼️</div>
-                <div class="info">
-                    <h4>Poster Mapa Isla Nublar con LED</h4>
-                    <span class="budget-tag budget-high">35-55€</span>
-                    <p class="price">39.99€</p>
-                    <p>Poster iluminado con luces LED. Decoración perfecta para cualquier habitación.</p>
-                    <a href="https://www.amazon.es/dp/B09V3G5KQL?tag=jurassicfan-21" class="btn" target="_blank">Ver en Amazon</a>
-                </div>
-            </div>
+    <footer>
+        <div class="container">
+            <p>© 2025 Jurassic Fan Store · <a href="index.html">Volver a la tienda</a> · Producto afiliado de <a href="https://affiliate-program.amazon.es/" target="_blank">Amazon Associates</a></p>
         </div>
-
-        <h2>🎯 Nuestras Recomendaciones por Tipo de Fan</h2>
-        <p><strong>Para niños:</strong> Figuras de Schleich o Mattel (10-30€). Son resistentes, seguras y muy detalladas.</p>
-        <p><strong>Para adolescentes:</strong> Ropa y complementos (20-40€). Camisetas, sudaderas y mochilas con diseños de la saga.</p>
-        <p><strong>Para adultos fans:</strong> Artículos de coleccionismo (50-100€). Réplicas, ediciones limitadas y figuras de alta gama.</p>
-        <p><strong>Para el fan que lo tiene todo:</strong> La saga completa en 4K o una experiencia (visita a Universal Studios, si puedes permitírtelo).</p>
-
-        <div class="cta-box">
-            <h3>🦖 Encuentra el Regalo Perfecto</h3>
-            <p>Explora nuestra tienda con cientos de productos oficiales de Jurassic Park y World.</p>
-            <a href="index.html" class="btn">Ir a la Tienda</a>
-        </div>
-    </div>
-    <footer><p>© 2026 Jurassic Fan Store. <a href="index.html">Volver a la tienda</a></p></footer>
+    </footer>
 </body>
 </html>

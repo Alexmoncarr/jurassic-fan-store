@@ -651,8 +651,22 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
         }
 
         .product-card {
@@ -825,8 +839,22 @@
 
         .affiliate-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        @media (max-width: 1024px) {
+            .affiliate-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .affiliate-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
         }
 
         .affiliate-card {
@@ -918,8 +946,22 @@
 
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        @media (max-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
         }
 
         .blog-card {
@@ -2126,9 +2168,9 @@
                             <span><i class="far fa-calendar"></i> 15 Mayo 2025</span>
                             <span><i class="far fa-clock"></i> 8 min</span>
                         </div>
-                        <h3><a href="#">Las 10 Figuras de Jurassic World que Todo Coleccionista Debe Tener</a></h3>
+                        <h3><a href="articulo-figuras-jurassic-world.html">Las 10 Figuras de Jurassic World que Todo Coleccionista Debe Tener</a></h3>
                         <p>Desde la clásica Indominus Rex hasta las nuevas figuras de la Hammond Collection. Te contamos cuáles son imprescindibles y dónde encontrarlas al mejor precio.</p>
-                        <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        <a href="articulo-figuras-jurassic-world.html" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -2142,9 +2184,9 @@
                             <span><i class="far fa-calendar"></i> 10 Mayo 2025</span>
                             <span><i class="far fa-clock"></i> 12 min</span>
                         </div>
-                        <h3><a href="#">Curiosidades de Jurassic Park que Probablemente No Conocías</a></h3>
+                        <h3><a href="articulo-curiosidades-jurassic-park.html">Curiosidades de Jurassic Park que Probablemente No Conocías</a></h3>
                         <p>Detrás de cámaras, errores de grabación, datos sobre los dinosaurios reales y mucho más. 30 años de la película que cambió el cine para siempre.</p>
-                        <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        <a href="articulo-curiosidades-jurassic-park.html" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -2158,9 +2200,9 @@
                             <span><i class="far fa-calendar"></i> 5 Mayo 2025</span>
                             <span><i class="far fa-clock"></i> 6 min</span>
                         </div>
-                        <h3><a href="#">Los Mejores Regalos de Jurassic Park para el Día del Padre</a></h3>
+                        <h3><a href="articulo-regalos-jurassic-park.html">Los Mejores Regalos de Jurassic Park para el Día del Padre</a></h3>
                         <p>¿Tu padre es fan de los dinosaurios? Aquí tienes una selección de regalos originales para sorprenderle, desde figuras premium hasta ropa exclusiva.</p>
-                        <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                        <a href="articulo-regalos-jurassic-park.html" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -2197,48 +2239,43 @@
                     </a>
                     <p>Tu tienda online de productos de Jurassic Park y Jurassic World. Figuras, ropa, decoración, juegos y coleccionismo. Envíos a toda España.</p>
                     <div class="footer-social">
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com/" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Tienda</h4>
                     <ul>
-                        <li><a href="#">Figuras de Acción</a></li>
-                        <li><a href="#">Ropa y Complementos</a></li>
-                        <li><a href="#">Juegos y Puzzles</a></li>
-                        <li><a href="#">Decoración</a></li>
-                        <li><a href="#">Coleccionismo</a></li>
-                        <li><a href="#">Libros y Películas</a></li>
+                        <li><a href="#productos">Figuras de Acción</a></li>
+                        <li><a href="#productos">Ropa y Complementos</a></li>
+                        <li><a href="#productos">Juegos y Puzzles</a></li>
+                        <li><a href="#afiliados">Decoración</a></li>
+                        <li><a href="#afiliados">Coleccionismo</a></li>
+                        <li><a href="#afiliados">Libros y Películas</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Información</h4>
+                    <h4>Blog</h4>
                     <ul>
-                        <li><a href="#">Sobre Nosotros</a></li>
-                        <li><a href="#">Envíos y Devoluciones</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Aviso Legal</a></li>
-                        <li><a href="#">Política de Cookies</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="articulo-figuras-jurassic-world.html">Top 10 Figuras</a></li>
+                        <li><a href="articulo-curiosidades-jurassic-park.html">Curiosidades del Cine</a></li>
+                        <li><a href="articulo-regalos-jurassic-park.html">Guía de Regalos</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Afiliados</h4>
+                    <h4>Info</h4>
                     <ul>
-                        <li><a href="#">Amazon Associates</a></li>
-                        <li><a href="#">Programa de Afiliados</a></li>
-                        <li><a href="#">Enlaces de Afiliado</a></li>
-                        <li><a href="#">Declaración de Afiliados</a></li>
-                        <li><a href="#" onclick="toggleAdmin(); return false;">⚙️ Panel Admin</a></li>
+                        <li><a href="https://affiliate-program.amazon.es/" target="_blank">Amazon Associates</a></li>
+                        <li><a href="https://www.amazon.es/gp/associates/join" target="_blank">Programa de Afiliados</a></li>
+                        <li><a href="javascript:void(0)" onclick="toggleAdmin(); return false;">⚙️ Panel Admin</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <span>© 2025 Jurassic Fan Store. Todos los derechos reservados.</span>
-                <span>Producto afiliado de <a href="https://affiliate-program.amazon.es/" target="_blank">Amazon Associates</a> · <a href="?admin=1">Admin</a></span>
+                <span>Producto afiliado de <a href="https://affiliate-program.amazon.es/" target="_blank">Amazon Associates</a> · <a href="#" onclick="toggleAdmin(); return false;">Admin</a></span>
             </div>
         </div>
     </footer>
