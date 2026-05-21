@@ -1361,6 +1361,177 @@
             }
         }
         /* ═══════════════════════════════════════════
+            ADMIN LOGIN
+        ═══════════════════════════════════════════ */
+        .admin-login {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            z-index: 100000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .admin-login.open {
+            display: flex;
+        }
+
+        .admin-login-box {
+            background: var(--gradient-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        .admin-login-box .logo {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .admin-login-box h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .admin-login-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+
+        .admin-login-box input[type="password"] {
+            width: 100%;
+            padding: 14px 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            text-align: center;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .admin-login-box input[type="password"]:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(0, 229, 160, 0.1);
+        }
+
+        .admin-login-box .btn {
+            width: 100%;
+        }
+
+        .admin-login-error {
+            color: var(--danger);
+            font-size: 0.85rem;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .admin-login-error.show {
+            display: block;
+        }
+
+        .admin-login-hint {
+            margin-top: 24px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* ═══════════════════════════════════════════
+            ADMIN LOGIN
+        ═══════════════════════════════════════════ */
+        .admin-login {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            z-index: 99998;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .admin-login.open {
+            display: flex;
+        }
+
+        .admin-login-box {
+            background: var(--gradient-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 48px 40px;
+            text-align: center;
+            max-width: 420px;
+            width: 90%;
+        }
+
+        .admin-login-box .logo {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .admin-login-box h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .admin-login-box p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .admin-login-box input[type="password"] {
+            width: 100%;
+            padding: 14px 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            text-align: center;
+            margin-bottom: 16px;
+            transition: var(--transition);
+        }
+
+        .admin-login-box input[type="password"]:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(0, 229, 160, 0.1);
+        }
+
+        .admin-login-box .btn {
+            width: 100%;
+        }
+
+        .admin-login-error {
+            display: none;
+            color: var(--danger);
+            font-size: 0.85rem;
+            margin-top: 12px;
+        }
+
+        .admin-login-error.show {
+            display: block;
+        }
+
+        .admin-login-hint {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-top: 16px;
+            line-height: 1.5;
+        }
+
+        /* ═══════════════════════════════════════════
             ADMIN PANEL (oculto, acceder con ?admin=1)
         ═══════════════════════════════════════════ */
         .admin-panel {
@@ -1546,6 +1717,26 @@
     </style>
 </head>
 <body>
+
+    <!-- ADMIN LOGIN -->
+    <div class="admin-login" id="adminLogin">
+        <div class="admin-login-box">
+            <div class="logo">🦕</div>
+            <h2>Panel de Afiliados</h2>
+            <p>Introduce la contraseña para acceder</p>
+            <input type="password" id="adminPassword" placeholder="••••••" autofocus>
+            <button class="btn btn-primary" onclick="adminLogin()">
+                <i class="fas fa-lock"></i> Acceder
+            </button>
+            <div class="admin-login-error" id="adminLoginError">
+                ❌ Contraseña incorrecta
+            </div>
+            <div class="admin-login-hint">
+                La contraseña se guarda en tu navegador.<br>
+                Si la cambias, necesitarás volver a introducirla.
+            </div>
+        </div>
+    </div>
 
     <!-- ADMIN PANEL -->
     <div class="admin-panel" id="adminPanel">
@@ -2372,6 +2563,39 @@
         });
 
         // ═══════════════════════════════════════════
+        // ADMIN LOGIN
+        // ═══════════════════════════════════════════
+        const ADMIN_PASSWORD_KEY = 'jurassic_admin_pass';
+        const DEFAULT_PASSWORD = 'jurassic2025';
+
+        function adminLogin() {
+            const input = document.getElementById('adminPassword');
+            const error = document.getElementById('adminLoginError');
+            const password = input.value.trim();
+
+            if (password === DEFAULT_PASSWORD) {
+                localStorage.setItem(ADMIN_PASSWORD_KEY, password);
+                document.getElementById('adminLogin').classList.remove('open');
+                document.getElementById('adminPanel').classList.add('open');
+                loadAdminProducts();
+            } else {
+                error.classList.add('show');
+                input.value = '';
+                input.focus();
+            }
+        }
+
+        // Allow Enter key to submit login
+        document.addEventListener('DOMContentLoaded', () => {
+            const pwInput = document.getElementById('adminPassword');
+            if (pwInput) {
+                pwInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') adminLogin();
+                });
+            }
+        });
+
+        // ═══════════════════════════════════════════
         // ADMIN PANEL
         // ═══════════════════════════════════════════
         let productsData = null;
@@ -2380,15 +2604,31 @@
         function checkAdminMode() {
             const params = new URLSearchParams(window.location.search);
             if (params.get('admin') === '1') {
-                toggleAdmin();
+                const savedPass = localStorage.getItem(ADMIN_PASSWORD_KEY);
+                if (savedPass === DEFAULT_PASSWORD) {
+                    document.getElementById('adminPanel').classList.add('open');
+                    loadAdminProducts();
+                } else {
+                    document.getElementById('adminLogin').classList.add('open');
+                }
             }
         }
 
         function toggleAdmin() {
+            const login = document.getElementById('adminLogin');
             const panel = document.getElementById('adminPanel');
-            panel.classList.toggle('open');
-            if (panel.classList.contains('open') && !productsData) {
-                loadAdminProducts();
+            
+            if (panel.classList.contains('open')) {
+                panel.classList.remove('open');
+            } else {
+                const savedPass = localStorage.getItem(ADMIN_PASSWORD_KEY);
+                if (savedPass === DEFAULT_PASSWORD) {
+                    panel.classList.add('open');
+                    if (!productsData) loadAdminProducts();
+                } else {
+                    login.classList.add('open');
+                    setTimeout(() => document.getElementById('adminPassword').focus(), 100);
+                }
             }
         }
 
