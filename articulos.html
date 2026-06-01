@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artículos sobre Dinosaurios y Jurassic Park | Jurassic Hub</title>
+  <meta name="description" content="Todos los artículos de Jurassic Hub: paleontología, Jurassic Park, dinosaurios, ciencia y más. Contenido SEO en español actualizado cada dos semanas." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://alexmoncarr.github.io/jurassic-fan-store/articulos.html" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <svg class="navbar__logo-icon" viewBox="0 0 36 36" fill="none">
+          <path d="M18 3L32 10V26L18 33L4 26V10L18 3Z" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M18 8L26 12.5V21.5L18 26L10 21.5V12.5L18 8Z" fill="currentColor" opacity="0.2"/>
+          <circle cx="18" cy="17" r="3" fill="currentColor"/>
+        </svg>
+        <span class="navbar__logo-text">JURASSIC <span>HUB</span></span>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="articulos.html" class="active">Artículos</a></li>
+        <li><a href="dinosaurios.html">Dinosaurios</a></li>
+        <li><a href="peliculas.html">Películas</a></li>
+        <li><a href="tienda.html" class="navbar__cta">🛒 Tienda</a></li>
+      </ul>
+      <button class="navbar__hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <div class="page-header__inner">
+        <h1 class="page-header__title">ARTÍCULOS</h1>
+        <p class="page-header__desc">Ciencia, cine y dinosaurios. Publicaciones cada dos semanas, redactadas con rigor y pasión.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <!-- Category filters -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;">
+        <button class="tag active" data-filter="all">Todos</button>
+        <button class="tag" data-filter="paleontologia">🦴 Paleontología</button>
+        <button class="tag" data-filter="peliculas">🎬 Películas</button>
+        <button class="tag" data-filter="dinosaurios">🦕 Dinosaurios</button>
+        <button class="tag" data-filter="ciencia">🔬 Ciencia</button>
+        <button class="tag" data-filter="guias">🏆 Guías</button>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="grid-3">
+
+        <!-- Published -->
+        <article class="article-card" data-category="paleontologia">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🦕</div>
+            <span class="article-card__badge">Paleontología</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Paleontología</span>
+            <h2 class="article-card__title"><a href="articles/dinosaurios-mas-grandes.html">Los dinosaurios más grandes que jamás han existido: el top definitivo</a></h2>
+            <p class="article-card__excerpt">Patagotitan, Argentinosaurus, Supersaurus... descubrimos los titanosaurios que dominaron la Tierra con datos científicos de 2025.</p>
+            <div class="article-card__meta"><span>1 May 2025</span><span class="article-card__read-time">⏱ 8 min</span></div>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="peliculas">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🎬</div>
+            <span class="article-card__badge">Cine</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Jurassic Park</span>
+            <h2 class="article-card__title"><a href="articles/jurassic-park-legado.html">Jurassic Park, 30 años después: el legado que no se puede superar</a></h2>
+            <p class="article-card__excerpt">Spielberg y Crichton crearon algo más que entretenimiento. Un análisis de por qué sigue siendo una obra maestra intocable.</p>
+            <div class="article-card__meta"><span>28 Abr 2025</span><span class="article-card__read-time">⏱ 9 min</span></div>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="paleontologia">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🦖</div>
+            <span class="article-card__badge">Ciencia</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Paleontología</span>
+            <h2 class="article-card__title"><a href="articles/trex-vs-spinosaurus.html">T-Rex vs Spinosaurus: El debate científico que lleva décadas sin resolverse</a></h2>
+            <p class="article-card__excerpt">Jurassic Park III lo escenificó. Los paleontólogos llevan 20 años desmontando la escena. ¿Qué dice realmente la ciencia?</p>
+            <div class="article-card__meta"><span>12 May 2025</span><span class="article-card__read-time">⏱ 6 min</span></div>
+          </div>
+        </article>
+
+        <!-- Scheduled -->
+        <article class="article-card" data-category="ciencia" data-publish-date="2025-06-15">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🧪</div>
+            <span class="article-card__badge">Ciencia</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Genética</span>
+            <h2 class="article-card__title"><a href="articles/adn-dinosaurio-posible.html">¿Podría existir realmente el ADN de un dinosaurio? La ciencia detrás del Parque Jurásico</a></h2>
+            <p class="article-card__excerpt">Crichton lo imaginó con ámbar y mosquitos. Los científicos llevan décadas buscando la respuesta real. ¿Cuán plausible es?</p>
+            <div class="article-card__meta"><span>15 Jun 2025</span><span class="article-card__read-time">⏱ 10 min</span></div>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="dinosaurios" data-publish-date="2025-07-01">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🐉</div>
+            <span class="article-card__badge">Dinosaurios</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Dinosaurios</span>
+            <h2 class="article-card__title"><a href="articles/velociraptor-mitos.html">Velociraptor: 7 mitos de las películas vs. la realidad científica</a></h2>
+            <p class="article-card__excerpt">Hollywood los convirtió en monstruos de 2 metros con inteligencia casi humana. La paleontología tiene una historia muy diferente.</p>
+            <div class="article-card__meta"><span>1 Jul 2025</span><span class="article-card__read-time">⏱ 7 min</span></div>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="guias" data-publish-date="2025-07-15">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🏆</div>
+            <span class="article-card__badge">Guía de compra</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Coleccionables</span>
+            <h2 class="article-card__title"><a href="articles/mejores-figuras-jurassic.html">Las mejores figuras y coleccionables de Jurassic Park en 2025</a></h2>
+            <p class="article-card__excerpt">Desde Funko Pop hasta réplicas premium de resina: la selección definitiva para fans y coleccionistas con todos los presupuestos.</p>
+            <div class="article-card__meta"><span>15 Jul 2025</span><span class="article-card__read-time">⏱ 12 min</span></div>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="peliculas" data-publish-date="2025-08-01">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🎥</div>
+            <span class="article-card__badge">Cine</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Jurassic World</span>
+            <h2 class="article-card__title"><a href="articles/jurassic-world-dominion.html">Jurassic World Dominion: análisis completo sin spoilers</a></h2>
+            <p class="article-card__excerpt">La saga llega a su (¿último?) capítulo. Analizamos en detalle si estuvo a la altura del legado o si supuso un cierre decepcionante.</p>
+            <div class="article-card__meta"><span>1 Ago 2025</span><span class="article-card__read-time">⏱ 11 min</span></div>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="ciencia" data-publish-date="2025-08-15">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🔬</div>
+            <span class="article-card__badge">Ciencia</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Comportamiento</span>
+            <h2 class="article-card__title"><a href="articles/dinosaurios-inteligentes.html">¿Eran inteligentes los dinosaurios? Lo que revelan los estudios más recientes</a></h2>
+            <p class="article-card__excerpt">El tamaño del cerebro, el comportamiento social y los análisis de huellas apuntan a una imagen muy diferente a la del reptil torpe.</p>
+            <div class="article-card__meta"><span>15 Ago 2025</span><span class="article-card__read-time">⏱ 8 min</span></div>
+          </div>
+        </article>
+
+        <article class="article-card" data-category="guias" data-publish-date="2025-09-01">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">📚</div>
+            <span class="article-card__badge">Guía de compra</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Libros</span>
+            <h2 class="article-card__title"><a href="articles/mejores-libros-dinosaurios.html">Los 8 mejores libros sobre dinosaurios para 2025: guía completa</a></h2>
+            <p class="article-card__excerpt">Para niños, adultos y aficionados serios. Los libros que no pueden faltar en ninguna biblioteca jurásica.</p>
+            <div class="article-card__meta"><span>1 Sep 2025</span><span class="article-card__read-time">⏱ 9 min</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section--sm">
+    <div class="container">
+      <div class="newsletter-banner">
+        <h2 class="newsletter-banner__title">🦕 Nuevos artículos cada dos semanas</h2>
+        <p class="newsletter-banner__desc">Suscríbete y recibe cada artículo directamente en tu email. Sin spam, solo dinosaurios.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="tu@email.com" />
+          <button type="submit" class="btn btn--primary">Suscribirme</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div><span class="footer__brand-text">JURASSIC <span class="accent">HUB</span></span><p class="footer__tagline">Portal de referencia sobre dinosaurios y Jurassic Park en español.</p></div>
+        <div><h4 class="footer__col-title">Categorías</h4><ul class="footer__links"><li><a href="articulos.html?cat=paleontologia">Paleontología</a></li><li><a href="articulos.html?cat=peliculas">Películas</a></li><li><a href="articulos.html?cat=dinosaurios">Dinosaurios</a></li></ul></div>
+        <div><h4 class="footer__col-title">Tienda</h4><ul class="footer__links"><li><a href="tienda.html">Ver todo</a></li><li><a href="tienda.html?cat=lego">LEGO</a></li><li><a href="tienda.html?cat=libros">Libros</a></li></ul></div>
+        <div><h4 class="footer__col-title">Legal</h4><ul class="footer__links"><li><a href="sobre-nosotros.html">Sobre nosotros</a></li><li><a href="politica-privacidad.html">Privacidad</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>© 2025 Jurassic Hub</span><span>Afiliado Amazon Associates</span></div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jurassicfanstore.es/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://alexmoncarr.github.io/jurassic-fan-store/</loc>
+    <lastmod>2025-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jurassicfanstore.es/articulo-top-figuras-jurassic-world.html</loc>
-    <lastmod>2026-05-20</lastmod>
+    <loc>https://alexmoncarr.github.io/jurassic-fan-store/articulos.html</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://alexmoncarr.github.io/jurassic-fan-store/tienda.html</loc>
+    <lastmod>2025-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jurassicfanstore.es/articulo-curiosidades-jurassic-park.html</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://alexmoncarr.github.io/jurassic-fan-store/articles/dinosaurios-mas-grandes.html</loc>
+    <lastmod>2025-05-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jurassicfanstore.es/articulo-regalos-jurassic-park.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://alexmoncarr.github.io/jurassic-fan-store/articles/trex-vs-spinosaurus.html</loc>
+    <lastmod>2025-05-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://alexmoncarr.github.io/jurassic-fan-store/articles/jurassic-park-legado.html</loc>
+    <lastmod>2025-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

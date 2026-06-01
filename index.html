@@ -1,2732 +1,532 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jurassic Fan Store - Tu tienda online de productos de Jurassic Park y Jurassic World. Figuras, ropa, juegos, decoración y coleccionismo. ¡Los mejores regalos para fans!">
-    <meta name="keywords" content="jurassic park, jurassic world, figuras jurassic, ropa jurassic park, juegos jurassic, decoracion jurassic, coleccionismo jurassic, regalos jurassic park, mattel jurassic, hasbro jurassic">
-    <meta name="author" content="Jurassic Fan Store">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Jurassic Fan Store — Productos de Jurassic Park & World">
-    <meta property="og:description" content="Tu tienda online de productos de Jurassic Park y Jurassic World. Figuras, ropa, juegos, decoración y coleccionismo.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_ES">
-    <title>Jurassic Fan Store — Productos de Jurassic Park & World</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        /* ═══════════════════════════════════════════
-           CSS VARIABLES & RESET
-        ═══════════════════════════════════════════ */
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a26;
-            --bg-card-hover: #22222f;
-            --border: #2a2a3a;
-            --text-primary: #f0f0f5;
-            --text-secondary: #a0a0b8;
-            --text-muted: #6a6a80;
-            --accent: #00e5a0;
-            --accent-dim: #00c488;
-            --accent-glow: rgba(0, 229, 160, 0.15);
-            --danger: #ff4757;
-            --warning: #ffa502;
-            --info: #3742fa;
-            --gradient-hero: linear-gradient(135deg, #0a0a0f 0%, #1a2a1a 50%, #0a0a0f 100%);
-            --gradient-accent: linear-gradient(135deg, #00e5a0, #00c488);
-            --gradient-card: linear-gradient(145deg, #1a1a26, #12121a);
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-            --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
-            --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
-            --shadow-glow: 0 0 30px rgba(0,229,160,0.1);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-xl: 28px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-        img { max-width: 100%; display: block; }
-
-        /* ═══════════════════════════════════════════
-            UTILITIES
-        ═══════════════════════════════════════════ */
-        .container {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-label {
-            display: inline-block;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 800;
-            letter-spacing: -1px;
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 32px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition);
-            text-transform: uppercase;
-        }
-
-        .btn-primary {
-            background: var(--gradient-accent);
-            color: var(--bg-primary);
-            box-shadow: 0 4px 20px rgba(0, 229, 160, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(0, 229, 160, 0.5);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--accent);
-            border: 2px solid var(--accent);
-        }
-
-        .btn-outline:hover {
-            background: var(--accent);
-            color: var(--bg-primary);
-        }
-
-        .btn-ghost {
-            background: rgba(255,255,255,0.05);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-
-        .btn-ghost:hover {
-            background: rgba(255,255,255,0.1);
-        }
-
-        /* ═══════════════════════════════════════════
-            PRELOADER
-        ═══════════════════════════════════════════ */
-        .preloader {
-            position: fixed;
-            inset: 0;
-            background: var(--bg-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 99999;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-
-        .preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .preloader-inner {
-            text-align: center;
-        }
-
-        .preloader-dino {
-            font-size: 3rem;
-            animation: bounce 1s ease-in-out infinite;
-        }
-
-        .preloader-bar {
-            width: 200px;
-            height: 3px;
-            background: var(--border);
-            border-radius: 3px;
-            margin: 20px auto 0;
-            overflow: hidden;
-        }
-
-        .preloader-bar::after {
-            content: '';
-            display: block;
-            width: 40%;
-            height: 100%;
-            background: var(--gradient-accent);
-            border-radius: 3px;
-            animation: loading 1.5s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        @keyframes loading {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(350%); }
-        }
-
-        /* ═══════════════════════════════════════════
-            HEADER
-        ═══════════════════════════════════════════ */
-        .top-bar {
-            background: var(--accent);
-            color: var(--bg-primary);
-            text-align: center;
-            padding: 8px 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .top-bar i { margin-right: 8px; }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(10, 10, 15, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            background: rgba(10, 10, 15, 0.95);
-            box-shadow: var(--shadow-md);
-        }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 24px;
-            max-width: 1320px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--text-primary);
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            font-size: 1.8rem;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-desktop {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-desktop a {
-            padding: 10px 18px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            border-radius: var(--radius-sm);
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-        }
-
-        .nav-desktop a:hover,
-        .nav-desktop a.active {
-            color: var(--accent);
-            background: var(--accent-glow);
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .header-btn {
-            width: 42px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .header-btn:hover {
-            background: var(--accent-glow);
-            color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        .cart-badge {
-            position: absolute;
-            top: -4px;
-            right: -4px;
-            width: 18px;
-            height: 18px;
-            background: var(--danger);
-            color: white;
-            border-radius: 50%;
-            font-size: 0.65rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 8px;
-        }
-
-        .hamburger span {
-            width: 24px;
-            height: 2px;
-            background: var(--text-primary);
-            border-radius: 2px;
-            transition: var(--transition);
-        }
-
-        /* Mobile Nav */
-        .nav-mobile {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(10, 10, 15, 0.98);
-            backdrop-filter: blur(20px);
-            z-index: 999;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .nav-mobile.open {
-            display: flex;
-        }
-
-        .nav-mobile a {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            padding: 12px 24px;
-            transition: var(--transition);
-        }
-
-        .nav-mobile a:hover { color: var(--accent); }
-
-        .nav-close {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-        }
-
-        /* ═══════════════════════════════════════════
-            HERO
-        ═══════════════════════════════════════════ */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-            background: var(--gradient-hero);
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(0, 229, 160, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(0, 229, 160, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 80%, rgba(55, 66, 250, 0.05) 0%, transparent 50%);
-        }
-
-        .hero-particles {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: var(--accent);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float linear infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.3; }
-            90% { opacity: 0.3; }
-            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 24px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 20px;
-            background: rgba(0, 229, 160, 0.1);
-            border: 1px solid rgba(0, 229, 160, 0.3);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 24px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        .hero h1 .highlight {
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-secondary);
-            max-width: 550px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 60px;
-            animation: fadeInUp 0.8s ease-out 0.8s both;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
-        }
-
-        .hero-scroll {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            animation: fadeInUp 0.8s ease-out 1s both;
-        }
-
-        .scroll-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, var(--accent), transparent);
-            animation: scrollPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes scrollPulse {
-            0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
-            50% { opacity: 1; transform: scaleY(1); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ═══════════════════════════════════════════
-            CATEGORIES
-        ═══════════════════════════════════════════ */
-        .categories {
-            background: var(--bg-secondary);
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .category-card {
-            background: var(--gradient-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 40px 24px;
-            text-align: center;
-            transition: var(--transition);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, var(--accent-glow), transparent 70%);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .category-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .category-card:hover::before {
-            opacity: 1;
-        }
-
-        .category-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            background: rgba(0, 229, 160, 0.1);
-            border: 1px solid rgba(0, 229, 160, 0.2);
-            border-radius: 50%;
-            color: var(--accent);
-            position: relative;
-            z-index: 1;
-        }
-
-        .category-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .category-card p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ═══════════════════════════════════════════
-            PRODUCTS / AFILIADOS
-        ═══════════════════════════════════════════ */
-        .products {
-            background: var(--bg-primary);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-
-        @media (max-width: 1024px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-        }
-
-        .product-card {
-            background: var(--gradient-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--accent);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .product-image {
-            position: relative;
-            height: 240px;
-            background: linear-gradient(135deg, #1a1a26, #12121a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            overflow: hidden;
-        }
-
-        .product-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, var(--bg-card) 0%, transparent 50%);
-        }
-
-        .product-badges {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            z-index: 2;
-        }
-
-        .badge {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .badge-sale { background: var(--danger); color: white; }
-        .badge-new { background: var(--accent); color: var(--bg-primary); }
-        .badge-hot { background: var(--warning); color: var(--bg-primary); }
-
-        .product-favorite {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 2;
-        }
-
-        .product-favorite:hover {
-            color: var(--danger);
-            border-color: var(--danger);
-        }
-
-        .product-info {
-            padding: 24px;
-        }
-
-        .product-brand {
-            font-size: 0.75rem;
-            color: var(--accent);
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
-
-        .product-name {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 14px;
-        }
-
-        .stars {
-            color: var(--warning);
-            font-size: 0.8rem;
-        }
-
-        .rating-count {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .product-price {
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
-            margin-bottom: 18px;
-        }
-
-        .price-current {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .price-original {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-decoration: line-through;
-        }
-
-        .price-discount {
-            font-size: 0.75rem;
-            color: var(--danger);
-            font-weight: 600;
-        }
-
-        .product-card .btn {
-            width: 100%;
-            padding: 12px;
-            font-size: 0.8rem;
-        }
-
-        /* ═══════════════════════════════════════════
-            AFFILIATE SECTION (ZONA DE AFILIADOS)
-        ═══════════════════════════════════════════ */
-        .affiliate-section {
-            background: var(--bg-secondary);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .affiliate-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 229, 160, 0.05), transparent 70%);
-            border-radius: 50%;
-        }
-
-        .affiliate-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-
-        @media (max-width: 1024px) {
-            .affiliate-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .affiliate-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-        }
-
-        .affiliate-card {
-            background: var(--gradient-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .affiliate-card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-glow);
-            transform: translateY(-4px);
-        }
-
-        .affiliate-card-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .affiliate-icon {
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 229, 160, 0.1);
-            border: 1px solid rgba(0, 229, 160, 0.2);
-            border-radius: var(--radius-md);
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
-
-        .affiliate-card-header h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-
-        .affiliate-card-header span {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .affiliate-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .affiliate-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .affiliate-price {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .affiliate-commission {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            background: rgba(255,255,255,0.05);
-            padding: 4px 10px;
-            border-radius: 20px;
-        }
-
-        .affiliate-card .btn {
-            width: 100%;
-        }
-
-        /* ═══════════════════════════════════════════
-            BLOG
-        ═══════════════════════════════════════════ */
-        .blog {
-            background: var(--bg-primary);
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-        }
-
-        @media (max-width: 1024px) {
-            .blog-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .blog-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-        }
-
-        .blog-card {
-            background: var(--gradient-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .blog-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--accent);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .blog-image {
-            height: 200px;
-            background: linear-gradient(135deg, #1a2a1a, #0a1a0a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            position: relative;
-        }
-
-        .blog-category {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            padding: 4px 14px;
-            background: var(--accent);
-            color: var(--bg-primary);
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .blog-content {
-            padding: 28px;
-        }
-
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-        }
-
-        .blog-content h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 12px;
-        }
-
-        .blog-content h3 a:hover {
-            color: var(--accent);
-        }
-
-        .blog-content p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 18px;
-            line-height: 1.6;
-        }
-
-        .blog-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--accent);
-            transition: var(--transition);
-        }
-
-        .blog-link:hover {
-            gap: 14px;
-        }
-
-        /* ═══════════════════════════════════════════
-            NEWSLETTER
-        ═══════════════════════════════════════════ */
-        .newsletter {
-            background: linear-gradient(135deg, #0a1a0a, #1a2a1a);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .newsletter::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 30% 50%, rgba(0, 229, 160, 0.1), transparent 60%);
-        }
-
-        .newsletter-inner {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .newsletter p {
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 12px;
-            max-width: 480px;
-            margin: 0 auto;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 16px 24px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            color: var(--text-primary);
-            font-size: 0.95rem;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        .newsletter-form input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .newsletter-form input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 20px rgba(0, 229, 160, 0.1);
-        }
-
-        /* ═══════════════════════════════════════════
-            FOOTER
-        ═══════════════════════════════════════════ */
-        footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            padding: 80px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 60px;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 16px;
-        }
-
-        .footer-brand p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 12px;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            color: var(--text-secondary);
-            transition: var(--transition);
-        }
-
-        .footer-social a:hover {
-            background: var(--accent);
-            color: var(--bg-primary);
-            border-color: var(--accent);
-        }
-
-        .footer-col h4 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col ul li a {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            transition: var(--transition);
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--accent);
-            padding-left: 6px;
-        }
-
-        .footer-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 30px;
-            border-top: 1px solid var(--border);
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .footer-bottom a {
-            color: var(--accent);
-        }
-
-        /* ═══════════════════════════════════════════
-            COOKIE BANNER
-        ═══════════════════════════════════════════ */
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--bg-card);
-            border-top: 1px solid var(--border);
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            z-index: 9999;
-            font-size: 0.85rem;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-
-        .cookie-banner.show {
-            transform: translateY(0);
-        }
-
-        .cookie-banner a {
-            color: var(--accent);
-        }
-
-        .cookie-banner .btn {
-            padding: 10px 24px;
-            font-size: 0.8rem;
-            flex-shrink: 0;
-        }
-
-        /* ═══════════════════════════════════════════
-            BACK TO TOP
-        ═══════════════════════════════════════════ */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent);
-            color: var(--bg-primary);
-            border: none;
-            border-radius: 50%;
-            font-size: 1.1rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: var(--transition);
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0, 229, 160, 0.3);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-4px);
-        }
-
-        /* ═══════════════════════════════════════════
-            ANIMATIONS (scroll-reveal)
-        ═══════════════════════════════════════════ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ═══════════════════════════════════════════
-            RESPONSIVE
-        ═══════════════════════════════════════════ */
-        @media (max-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-desktop { display: none; }
-            .hamburger { display: flex; }
-
-            .section { padding: 60px 0; }
-
-            .hero h1 { letter-spacing: -1px; }
-
-            .hero-stats { gap: 30px; }
-
-            .stat-number { font-size: 1.5rem; }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            }
-
-            .affiliate-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-            .cookie-banner {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .categories-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-
-            .category-card {
-                padding: 24px 16px;
-            }
-        }
-        /* ═══════════════════════════════════════════
-            ADMIN LOGIN
-        ═══════════════════════════════════════════ */
-        .admin-login {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: var(--bg-primary);
-            z-index: 100000;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        .admin-login.open {
-            display: flex;
-        }
-
-        .admin-login-box {
-            background: var(--gradient-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 48px 40px;
-            width: 100%;
-            max-width: 420px;
-            text-align: center;
-        }
-
-        .admin-login-box .logo {
-            font-size: 3rem;
-            margin-bottom: 16px;
-        }
-
-        .admin-login-box h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-
-        .admin-login-box p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 32px;
-        }
-
-        .admin-login-box input[type="password"] {
-            width: 100%;
-            padding: 14px 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            color: var(--text-primary);
-            font-size: 1rem;
-            outline: none;
-            text-align: center;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .admin-login-box input[type="password"]:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 20px rgba(0, 229, 160, 0.1);
-        }
-
-        .admin-login-box .btn {
-            width: 100%;
-        }
-
-        .admin-login-error {
-            color: var(--danger);
-            font-size: 0.85rem;
-            margin-top: 12px;
-            display: none;
-        }
-
-        .admin-login-error.show {
-            display: block;
-        }
-
-        .admin-login-hint {
-            margin-top: 24px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        /* ═══════════════════════════════════════════
-            ADMIN LOGIN
-        ═══════════════════════════════════════════ */
-        .admin-login {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: var(--bg-primary);
-            z-index: 99998;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .admin-login.open {
-            display: flex;
-        }
-
-        .admin-login-box {
-            background: var(--gradient-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 48px 40px;
-            text-align: center;
-            max-width: 420px;
-            width: 90%;
-        }
-
-        .admin-login-box .logo {
-            font-size: 3rem;
-            margin-bottom: 16px;
-        }
-
-        .admin-login-box h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-
-        .admin-login-box p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
-        }
-
-        .admin-login-box input[type="password"] {
-            width: 100%;
-            padding: 14px 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            color: var(--text-primary);
-            font-size: 1rem;
-            outline: none;
-            text-align: center;
-            margin-bottom: 16px;
-            transition: var(--transition);
-        }
-
-        .admin-login-box input[type="password"]:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 20px rgba(0, 229, 160, 0.1);
-        }
-
-        .admin-login-box .btn {
-            width: 100%;
-        }
-
-        .admin-login-error {
-            display: none;
-            color: var(--danger);
-            font-size: 0.85rem;
-            margin-top: 12px;
-        }
-
-        .admin-login-error.show {
-            display: block;
-        }
-
-        .admin-login-hint {
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            margin-top: 16px;
-            line-height: 1.5;
-        }
-
-        /* ═══════════════════════════════════════════
-            ADMIN PANEL (oculto, acceder con ?admin=1)
-        ═══════════════════════════════════════════ */
-        .admin-panel {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: var(--bg-primary);
-            z-index: 99999;
-            overflow-y: auto;
-            padding: 40px 24px;
-        }
-
-        .admin-panel.open {
-            display: block;
-        }
-
-        .admin-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .admin-header h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
-
-        .admin-close {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        .admin-close:hover {
-            color: var(--danger);
-            border-color: var(--danger);
-        }
-
-        .admin-section {
-            background: var(--gradient-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            margin-bottom: 24px;
-        }
-
-        .admin-section h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-
-        .admin-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-        }
-
-        .admin-table th,
-        .admin-table td {
-            padding: 12px 16px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .admin-table th {
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.75rem;
-        }
-
-        .admin-table td {
-            color: var(--text-secondary);
-        }
-
-        .admin-table tr:hover td {
-            background: rgba(255,255,255,0.02);
-        }
-
-        .admin-table .btn-sm {
-            padding: 6px 14px;
-            font-size: 0.75rem;
-        }
-
-        .admin-form-group {
-            margin-bottom: 16px;
-        }
-
-        .admin-form-group label {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .admin-form-group input,
-        .admin-form-group textarea,
-        .admin-form-group select {
-            width: 100%;
-            padding: 12px 16px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        .admin-form-group input:focus,
-        .admin-form-group textarea:focus {
-            border-color: var(--accent);
-        }
-
-        .admin-form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .admin-instructions {
-            background: rgba(0, 229, 160, 0.05);
-            border: 1px solid rgba(0, 229, 160, 0.2);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            margin-bottom: 24px;
-        }
-
-        .admin-instructions h4 {
-            color: var(--accent);
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-        }
-
-        .admin-instructions ol {
-            padding-left: 20px;
-        }
-
-        .admin-instructions ol li {
-            margin-bottom: 8px;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .admin-instructions code {
-            background: rgba(0,0,0,0.3);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            color: var(--accent);
-        }
-
-        @media (max-width: 768px) {
-            .admin-form-row {
-                grid-template-columns: 1fr;
-            }
-            .admin-table {
-                font-size: 0.75rem;
-            }
-            .admin-table th,
-            .admin-table td {
-                padding: 8px 10px;
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jurassic Hub — Tu portal sobre dinosaurios y Jurassic Park</title>
+  <meta name="description" content="El portal en español más completo sobre dinosaurios, Jurassic Park y Jurassic World. Artículos científicos, análisis de películas y los mejores productos del universo jurásico." />
+  <meta name="keywords" content="dinosaurios, jurassic park, jurassic world, t-rex, velociraptor, paleontología, coleccionables dinosaurios" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://alexmoncarr.github.io/jurassic-fan-store/" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jurassic Hub — Tu portal sobre dinosaurios y Jurassic Park" />
+  <meta property="og:description" content="El portal en español más completo sobre dinosaurios, Jurassic Park y Jurassic World." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alexmoncarr.github.io/jurassic-fan-store/" />
+  <meta property="og:image" content="https://alexmoncarr.github.io/jurassic-fan-store/images/og-home.jpg" />
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Jurassic Hub",
+    "url": "https://alexmoncarr.github.io/jurassic-fan-store",
+    "description": "Portal de contenido sobre dinosaurios, Jurassic Park y Jurassic World",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://alexmoncarr.github.io/jurassic-fan-store/articulos.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-    <!-- ADMIN LOGIN -->
-    <div class="admin-login" id="adminLogin">
-        <div class="admin-login-box">
-            <div class="logo">🦕</div>
-            <h2>Panel de Afiliados</h2>
-            <p>Introduce la contraseña para acceder</p>
-            <input type="password" id="adminPassword" placeholder="••••••" autofocus>
-            <button class="btn btn-primary" onclick="adminLogin()">
-                <i class="fas fa-lock"></i> Acceder
-            </button>
-            <div class="admin-login-error" id="adminLoginError">
-                ❌ Contraseña incorrecta
-            </div>
-            <div class="admin-login-hint">
-                La contraseña se guarda en tu navegador.<br>
-                Si la cambias, necesitarás volver a introducirla.
-            </div>
-        </div>
+  <!-- NAVIGATION -->
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Jurassic Hub - Inicio">
+        <svg class="navbar__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 3L32 10V26L18 33L4 26V10L18 3Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M18 8L26 12.5V21.5L18 26L10 21.5V12.5L18 8Z" fill="currentColor" opacity="0.2"/>
+          <circle cx="18" cy="17" r="3" fill="currentColor"/>
+        </svg>
+        <span class="navbar__logo-text">JURASSIC <span>HUB</span></span>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="articulos.html">Artículos</a></li>
+        <li><a href="dinosaurios.html">Dinosaurios</a></li>
+        <li><a href="peliculas.html">Películas</a></li>
+        <li><a href="tienda.html" class="navbar__cta">🛒 Tienda</a></li>
+      </ul>
+      <button class="navbar__hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <!-- ADMIN PANEL -->
-    <div class="admin-panel" id="adminPanel">
-        <div class="admin-header">
-            <h2>🦕 Panel de Afiliados</h2>
-            <div class="admin-close" onclick="toggleAdmin()"><i class="fas fa-times"></i></div>
-        </div>
-
-        <div class="admin-instructions">
-            <h4>📋 Instrucciones para gestionar productos de afiliados</h4>
-            <ol>
-                <li><strong>Editar productos:</strong> Modifica los campos en la tabla de abajo y pulsa "Guardar cambios"</li>
-                <li><strong>Añadir producto:</strong> Rellena el formulario "Nuevo Producto" al final</li>
-                <li><strong>Eliminar producto:</strong> Pulsa el botón 🗑️ rojo en la fila del producto</li>
-                <li><strong>URL de afiliado:</strong> Formato: <code>https://www.amazon.es/dp/ASIN?tag=TU-TAG-21</code></li>
-                <li><strong>Guardar:</strong> Los cambios se guardan en <code>products.json</code> — recuerda hacer <code>git push</code></li>
-                <li><strong>Ver web:</strong> Cierra este panel para ver la web normal</li>
-            </ol>
-        </div>
-
-        <div class="admin-section">
-            <h3>📦 Productos Actuales</h3>
-            <div style="overflow-x: auto;">
-                <table class="admin-table" id="productsTable">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>ASIN</th>
-                            <th>Precio</th>
-                            <th>Categoría</th>
-                            <th>URL Afiliado</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="productsTableBody">
-                        <!-- Se carga dinámicamente -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="admin-section">
-            <h3>➕ Nuevo Producto</h3>
-            <form id="newProductForm" onsubmit="return addProduct(event)">
-                <div class="admin-form-row">
-                    <div class="admin-form-group">
-                        <label>Nombre del producto</label>
-                        <input type="text" id="npName" required placeholder="Ej: Figura T-Rex Mattel">
-                    </div>
-                    <div class="admin-form-group">
-                        <label>Marca</label>
-                        <input type="text" id="npBrand" required placeholder="Ej: Mattel">
-                    </div>
-                </div>
-                <div class="admin-form-row">
-                    <div class="admin-form-group">
-                        <label>ASIN de Amazon</label>
-                        <input type="text" id="npAsin" required placeholder="Ej: B09QJLZ3HT">
-                    </div>
-                    <div class="admin-form-group">
-                        <label>Categoría</label>
-                        <select id="npCategory">
-                            <option>Figuras de Acción</option>
-                            <option>Ropa y Complementos</option>
-                            <option>Juegos y Puzzles</option>
-                            <option>Decoración</option>
-                            <option>Coleccionismo</option>
-                            <option>Libros y Películas</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="admin-form-group">
-                    <label>Descripción</label>
-                    <textarea id="npDesc" rows="3" required placeholder="Descripción atractiva del producto..."></textarea>
-                </div>
-                <div class="admin-form-row">
-                    <div class="admin-form-group">
-                        <label>Precio actual</label>
-                        <input type="text" id="npPrice" required placeholder="Ej: 34,99€">
-                    </div>
-                    <div class="admin-form-group">
-                        <label>Precio original</label>
-                        <input type="text" id="npOriginal" placeholder="Ej: 49,99€">
-                    </div>
-                </div>
-                <div class="admin-form-row">
-                    <div class="admin-form-group">
-                        <label>Emoji/Icono</label>
-                        <input type="text" id="npIcon" placeholder="Ej: 🦖" value="🦖">
-                    </div>
-                    <div class="admin-form-group">
-                        <label>Badge</label>
-                        <select id="npBadge">
-                            <option value="">Ninguno</option>
-                            <option value="hot">🔥 Hot</option>
-                            <option value="new">Nuevo</option>
-                            <option value="sale">🏷️ Oferta</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="admin-form-group">
-                    <label>URL de Afiliado Amazon (completa)</label>
-                    <input type="url" id="npUrl" required placeholder="https://www.amazon.es/dp/ASIN?tag=TU-TAG-21">
-                </div>
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-plus"></i> Añadir Producto
-                </button>
-            </form>
-        </div>
+  <!-- HERO -->
+  <section class="hero" aria-label="Portada">
+    <div class="hero__bg"></div>
+    <div class="hero__grid-overlay"></div>
+    <div class="hero__content">
+      <span class="hero__eyebrow animate-fade-up">// El universo jurásico en español</span>
+      <h1 class="hero__title animate-fade-up animate-delay-1">
+        JURASSIC<br><span class="accent">HUB</span>
+      </h1>
+      <p class="hero__subtitle animate-fade-up animate-delay-2">Ciencia · Cine · Dinosaurios</p>
+      <p class="hero__desc animate-fade-up animate-delay-3">
+        Desde el Triásico hasta el Parque Jurásico. Artículos científicos, 
+        análisis cinematográficos y todo lo que necesitas saber sobre los señores de la Tierra.
+      </p>
+      <div class="hero__actions animate-fade-up animate-delay-4">
+        <a href="articulos.html" class="btn btn--primary btn--lg">Explorar artículos</a>
+        <a href="tienda.html" class="btn btn--amber btn--lg">Ver la tienda</a>
+      </div>
     </div>
-
-    <!-- PRELOADER -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-inner">
-            <div class="preloader-dino">🦖</div>
-            <div class="preloader-bar"></div>
-        </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
     </div>
+  </section>
 
-    <!-- TOP BAR -->
-    <div class="top-bar">
-        <i class="fas fa-truck"></i> Envío gratis en pedidos +49€ · <i class="fas fa-shield-halved"></i> Compra segura · <i class="fas fa-rotate-left"></i> Devoluciones 30 días
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-bar__inner">
+        <div class="stat-item">
+          <div class="stat-item__number">230M</div>
+          <div class="stat-item__label">Años de historia</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__number">700+</div>
+          <div class="stat-item__label">Especies conocidas</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__number">6</div>
+          <div class="stat-item__label">Películas de la saga</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__number">∞</div>
+          <div class="stat-item__label">Fascinación</div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- HEADER -->
-    <header id="header">
-        <div class="header-inner">
-            <a href="#" class="logo">
-                <span class="logo-icon">🦕</span>
-                JURASSIC<span>STORE</span>
-            </a>
-
-            <nav class="nav-desktop">
-                <a href="#" class="active">Inicio</a>
-                <a href="#productos">Productos</a>
-                <a href="#afiliados">Ofertas</a>
-                <a href="#blog">Blog</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-
-            <div class="header-actions">
-                <button class="header-btn" title="Buscar">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="header-btn" title="Favoritos">
-                    <i class="far fa-heart"></i>
-                </button>
-                <button class="header-btn" title="Carrito">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-badge">3</span>
-                </button>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+  <!-- FEATURED ARTICLE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Artículo destacado</span>
+        <h2 class="section-title">Lo más leído esta semana</h2>
+      </div>
+      <a href="articles/dinosaurios-mas-grandes.html" class="article-featured" style="text-decoration:none;">
+        <div class="article-featured__image" aria-label="Dinosaurios más grandes">
+          <div style="text-align:center; padding:20px;">
+            <div style="font-size:6rem; margin-bottom:8px;">🦕</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--text-muted); letter-spacing:0.15em;">PATAGOTITAN MAYORUM</div>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(42,77,24,0.3) 0%,transparent 60%);"></div>
         </div>
-    </header>
-
-    <!-- MOBILE NAV -->
-    <div class="nav-mobile" id="navMobile">
-        <div class="nav-close" id="navClose"><i class="fas fa-times"></i></div>
-        <a href="#">Inicio</a>
-        <a href="#productos">Productos</a>
-        <a href="#afiliados">Ofertas</a>
-        <a href="#blog">Blog</a>
-        <a href="#contacto">Contacto</a>
+        <div class="article-featured__body">
+          <span class="article-featured__label">// PALEONTOLOGÍA · 8 min lectura</span>
+          <h2 class="article-featured__title">Los dinosaurios más grandes que jamás han existido: el top definitivo</h2>
+          <p class="article-featured__excerpt">
+            Durante millones de años, estos titanes caminaron por la Tierra. Desde el colosal 
+            Patagotitan Mayorum hasta el imponente Argentinosaurus, descubrimos qué hacía posible 
+            que existieran organismos tan descomunales y cuáles son los récords que aún nos dejan sin palabras.
+          </p>
+          <span class="btn btn--outline">Leer el artículo →</span>
+        </div>
+      </a>
     </div>
+  </section>
 
-    <!-- ═══════════════════════════════════════════
-         HERO
-    ═══════════════════════════════════════════ -->
-    <section class="hero" id="inicio">
-        <div class="hero-bg"></div>
-        <div class="hero-particles" id="particles"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-bolt"></i> Nuevas llegadas 2025
-            </div>
-            <h1>
-                Todo para fans de<br>
-                <span class="highlight">Jurassic World</span>
-            </h1>
-            <p>Figuras, ropa, decoración, juegos y coleccionismo. Los mejores productos de la saga al mejor precio. ¡Encuentra tu próximo tesoro jurásico!</p>
-            <div class="hero-buttons">
-                <a href="#productos" class="btn btn-primary">
-                    <i class="fas fa-fire"></i> Ver Productos
-                </a>
-                <a href="#afiliados" class="btn btn-outline">
-                    <i class="fas fa-tags"></i> Mejores Ofertas
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Productos</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">4.8★</div>
-                    <div class="stat-label">Valoración</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">10K+</div>
-                    <div class="stat-label">Clientes</div>
-                </div>
-            </div>
+  <!-- RECENT ARTICLES -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <span class="section-eyebrow">Publicaciones recientes</span>
+          <h2 class="section-title" style="margin-bottom:0;">Últimos artículos</h2>
         </div>
-        <div class="hero-scroll">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
+        <a href="articulos.html" class="btn btn--outline">Ver todos →</a>
+      </div>
 
-    <!-- ═══════════════════════════════════════════
-         CATEGORÍAS
-    ═══════════════════════════════════════════ -->
-    <section class="categories section" id="categorias">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-label">Explora</div>
-                <h2 class="section-title">Categorías</h2>
-                <p class="section-subtitle">Encuentra exactamente lo que buscas entre nuestras colecciones de Jurassic Park y Jurassic World</p>
+      <div class="grid-3">
+
+        <!-- Article 1 -->
+        <article class="article-card">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🦖</div>
+            <span class="article-card__badge">Ciencia</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Paleontología</span>
+            <h3 class="article-card__title">
+              <a href="articles/trex-vs-spinosaurus.html">T-Rex vs Spinosaurus: El debate científico que lleva décadas sin resolverse</a>
+            </h3>
+            <p class="article-card__excerpt">Jurassic Park III lo escenificó en pantalla grande, pero ¿qué dice la ciencia real sobre qué depredador habría dominado?</p>
+            <div class="article-card__meta">
+              <span>12 Mayo 2025</span>
+              <span class="article-card__read-time">⏱ 6 min</span>
             </div>
-            <div class="categories-grid">
-                <a href="#" class="category-card reveal">
-                    <div class="category-icon">🦖</div>
-                    <h3>Figuras de Acción</h3>
-                    <p>Mattel, Hasbro, Schleich y más</p>
-                </a>
-                <a href="#" class="category-card reveal">
-                    <div class="category-icon">👕</div>
-                    <h3>Ropa y Complementos</h3>
-                    <p>Camisetas, sudaderas, gorras</p>
-                </a>
-                <a href="#" class="category-card reveal">
-                    <div class="category-icon">🎮</div>
-                    <h3>Juegos y Puzzles</h3>
-                    <p>De mesa, videojuegos, LEGO</p>
-                </a>
-                <a href="#" class="category-card reveal">
-                    <div class="category-icon">🖼️</div>
-                    <h3>Decoración</h3>
-                    <p>Posters, láminas, figuras</p>
-                </a>
-                <a href="#" class="category-card reveal">
-                    <div class="category-icon">💎</div>
-                    <h3>Coleccionismo</h3>
-                    <p>Réplicas, ediciones limitadas</p>
-                </a>
-                <a href="#" class="category-card reveal">
-                    <div class="category-icon">📚</div>
-                    <h3>Libros y Películas</h3>
-                    <p>Novelas, guías, Blu-ray 4K</p>
-                </a>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="article-card">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🎬</div>
+            <span class="article-card__badge">Cine</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Jurassic Park</span>
+            <h3 class="article-card__title">
+              <a href="articles/jurassic-park-legado.html">Jurassic Park, 30 años después: el legado de la película que reinventó el cine</a>
+            </h3>
+            <p class="article-card__excerpt">Spielberg y Crichton crearon algo más que una película de dinosaurios. Analizamos por qué sigue siendo imposible de superar.</p>
+            <div class="article-card__meta">
+              <span>28 Abril 2025</span>
+              <span class="article-card__read-time">⏱ 9 min</span>
             </div>
-        </div>
-    </section>
+          </div>
+        </article>
 
-    <!-- ═══════════════════════════════════════════
-         PRODUCTOS DESTACADOS
-    ═══════════════════════════════════════════ -->
-    <section class="products section" id="productos">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-label">Top Ventas</div>
-                <h2 class="section-title">Productos Destacados</h2>
-                <p class="section-subtitle">Los artículos más populares entre los fans de Jurassic Park y Jurassic World</p>
+        <!-- Article 3 - Velociraptor (scheduled in 6 weeks from site launch) -->
+        <article class="article-card" data-publish-date="2025-07-01">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🐉</div>
+            <span class="article-card__badge">Ciencia</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Dinosaurios</span>
+            <h3 class="article-card__title">
+              <a href="articles/velociraptor-mitos.html">Velociraptor: 7 mitos de las películas vs. la realidad científica</a>
+            </h3>
+            <p class="article-card__excerpt">Hollywood los convirtió en monstruos de 2 metros. Los paleontólogos tienen una historia muy diferente que contar.</p>
+            <div class="article-card__meta">
+              <span>1 Julio 2025</span>
+              <span class="article-card__read-time">⏱ 7 min</span>
             </div>
-            <div class="products-grid">
+          </div>
+        </article>
 
-                <!-- Producto 1 -->
-                <div class="product-card reveal">
-                    <div class="product-image">
-                        🦖
-                        <div class="product-badges">
-                            <span class="badge badge-hot">🔥 Hot</span>
-                        </div>
-                        <button class="product-favorite"><i class="far fa-heart"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Mattel</div>
-                        <h4 class="product-name">Figura de Acción Indominus Rex — Jurassic World Dominion</h4>
-                        <div class="product-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(234)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">34,99€</span>
-                            <span class="price-original">49,99€</span>
-                            <span class="price-discount">-30%</span>
-                        </div>
-                        <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                            <i class="fas fa-shopping-cart"></i> Ver en Amazon
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Producto 2 -->
-                <div class="product-card reveal">
-                    <div class="product-image">
-                        🦕
-                        <div class="product-badges">
-                            <span class="badge badge-new">Nuevo</span>
-                        </div>
-                        <button class="product-favorite"><i class="far fa-heart"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Schleich</div>
-                        <h4 class="product-name">Figura T-Rex de Schleich — Colección Dinosaurios</h4>
-                        <div class="product-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(189)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">24,95€</span>
-                            <span class="price-original">32,95€</span>
-                            <span class="price-discount">-24%</span>
-                        </div>
-                        <a href="https://www.amazon.es/dp/B08N5X3KQR?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                            <i class="fas fa-shopping-cart"></i> Ver en Amazon
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Producto 3 -->
-                <div class="product-card reveal">
-                    <div class="product-image">
-                        🎮
-                        <div class="product-badges">
-                            <span class="badge badge-sale">-40%</span>
-                        </div>
-                        <button class="product-favorite"><i class="far fa-heart"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">LEGO</div>
-                        <h4 class="product-name">LEGO Jurassic World — Emboscada del T-Rex (76956)</h4>
-                        <div class="product-rating">
-                            <span class="stars">★★★★☆</span>
-                            <span class="rating-count">(312)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">47,99€</span>
-                            <span class="price-original">79,99€</span>
-                            <span class="price-discount">-40%</span>
-                        </a>
-                        <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                            <i class="fas fa-shopping-cart"></i> Ver en Amazon
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Producto 4 -->
-                <div class="product-card reveal">
-                    <div class="product-image">
-                        👕
-                        <div class="product-badges">
-                            <span class="badge badge-hot">🔥 Hot</span>
-                        </div>
-                        <button class="product-favorite"><i class="far fa-heart"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Jurassic Park™</div>
-                        <h4 class="product-name">Camiseta Oficial Jurassic Park — Logo Clásico</h4>
-                        <div class="product-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(567)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">19,99€</span>
-                            <span class="price-original">27,99€</span>
-                            <span class="price-discount">-29%</span>
-                        </div>
-                        <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                            <i class="fas fa-shopping-cart"></i> Ver en Amazon
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Producto 5 -->
-                <div class="product-card reveal">
-                    <div class="product-image">
-                        🎬
-                        <button class="product-favorite"><i class="far fa-heart"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Universal</div>
-                        <h4 class="product-name">Saga Completa Jurassic Park — Colección 4K Ultra HD</h4>
-                        <div class="product-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(891)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">59,99€</span>
-                            <span class="price-original">89,99€</span>
-                            <span class="price-discount">-33%</span>
-                        </div>
-                        <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                            <i class="fas fa-shopping-cart"></i> Ver en Amazon
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Producto 6 -->
-                <div class="product-card reveal">
-                    <div class="product-image">
-                        💎
-                        <div class="product-badges">
-                            <span class="badge badge-new">Nuevo</span>
-                        </div>
-                        <button class="product-favorite"><i class="far fa-heart"></i></button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Hammond Collection</div>
-                        <h4 class="product-name">Réplica Huevo de Dinosaurio — Hammond Collection</h4>
-                        <div class="product-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(156)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">44,99€</span>
-                            <span class="price-original">59,99€</span>
-                            <span class="price-discount">-25%</span>
-                        </div>
-                        <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                            <i class="fas fa-shopping-cart"></i> Ver en Amazon
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         ZONA DE AFILIADOS (EDITABLE)
-    ═══════════════════════════════════════════ -->
-    <section class="affiliate-section section" id="afiliados">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-label">💰 Zona de Afiliados</div>
-                <h2 class="section-title">Mejores Ofertas del Mes</h2>
-                <p class="section-subtitle">
-                    Hemos seleccionado los productos con mejor relación calidad-precio para fans de Jurassic Park y World.
-                    <br><small style="color: var(--text-muted);">⚠️ Estos enlaces son de afiliados de Amazon. Compramos a través de ellos nos ayudas sin coste adicional.</small>
-                </p>
-            </div>
-
-            <!-- 
-            ╔══════════════════════════════════════════════════════════════╗
-            ║  📝 GUÍA PARA AÑADIR/EDITAR PRODUCTOS DE AFILIADOS          ║
-            ╠══════════════════════════════════════════════════════════════╣
-            ║                                                              ║
-            ║  Para añadir un nuevo producto de afiliado:                  ║
-            ║                                                              ║
-            ║  1. Copia un bloque <div class="affiliate-card">             ║
-            ║  2. Cambia el icono (emoji), nombre, descripción            ║
-            ║  3. Cambia el precio                                         ║
-            ║  4. IMPORTANTE: Cambia la URL del enlace:                    ║
-            ║     - Ve a Amazon Associates                                  ║
-            ║     - Busca el producto                                      ║
-            ║     - Copia tu enlace de afiliado (con tu tag)               ║
-            ║     - Pega la URL en el href del botón "Comprar en Amazon"   ║
-            ║                                                              ║
-            ║  Formato URL Amazon afiliados:                               ║
-            ║  https://www.amazon.es/dp/ASIN?tag=TU-TAG-21                 ║
-            ║                                                              ║
-            ║  Tu tag actual: jurassicfan-21                               ║
-            ║  (Cámbialo cuando tengas tu propia cuenta Amazon Associates) ║
-            ║                                                              ║
-            ╚══════════════════════════════════════════════════════════════╝
-            -->
-
-            <div class="affiliate-grid">
-
-                <!-- AFILIADO 1 -->
-                <div class="affiliate-card reveal">
-                    <div class="affiliate-card-header">
-                        <div class="affiliate-icon">🦖</div>
-                        <div>
-                            <h3>Indominus Rex — Mattel</h3>
-                            <span>Figura de Acción Articulada</span>
-                        </div>
-                    </div>
-                    <p>La figura más detallada de la Indominus Rex de Jurassic World Dominion. 18 puntos de articulación, mandíbula articulada y diseño fiel a la película.</p>
-                    <div class="affiliate-meta">
-                        <span class="affiliate-price">34,99€</span>
-                        <span class="affiliate-commission">~3% comisión</span>
-                    </div>
-                    <!-- 🔗 CAMBIA ESTA URL POR TU ENLACE DE AFILIADO REAL -->
-                    <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                        <i class="fab fa-amazon"></i> Comprar en Amazon
-                    </a>
-                </div>
-
-                <!-- AFILIADO 2 -->
-                <div class="affiliate-card reveal">
-                    <div class="affiliate-card-header">
-                        <div class="affiliate-icon">🎮</div>
-                        <div>
-                            <h3>LEGO T-Rex Transport</h3>
-                            <span>Set de Construcción LEGO</span>
-                        </div>
-                    </div>
-                    <p>Set LEGO del T-Rex con camión de transporte, minifiguras de Owen y Claire. Perfecto para niños y coleccionistas. 790 piezas.</p>
-                    <div class="affiliate-meta">
-                        <span class="affiliate-price">47,99€</span>
-                        <span class="affiliate-commission">~3% comisión</span>
-                    </div>
-                    <!-- 🔗 CAMBIA ESTA URL POR TU ENLACE DE AFILIADO REAL -->
-                    <a href="https://www.amazon.es/dp/B08N5X3KQR?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                        <i class="fab fa-amazon"></i> Comprar en Amazon
-                    </a>
-                </div>
-
-                <!-- AFILIADO 3 -->
-                <div class="affiliate-card reveal">
-                    <div class="affiliate-card-header">
-                        <div class="affiliate-icon">🎬</div>
-                        <div>
-                            <h3>Saga Completa 4K UHD</h3>
-                            <span>6 Películas — Colección</span>
-                        </div>
-                    </div>
-                    <p>Todas las películas de la saga en 4K Ultra HD con HDR. Incluye contenido extra, escenas eliminadas y documentales detrás de las cámaras.</p>
-                    <div class="affiliate-meta">
-                        <span class="affiliate-price">59,99€</span>
-                        <span class="affiliate-commission">~3% comisión</span>
-                    </div>
-                    <!-- 🔗 CAMBIA ESTA URL POR TU ENLACE DE AFILIADO REAL -->
-                    <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                        <i class="fab fa-amazon"></i> Comprar en Amazon
-                    </a>
-                </div>
-
-                <!-- AFILIADO 4 -->
-                <div class="affiliate-card reveal">
-                    <div class="affiliate-card-header">
-                        <div class="affiliate-icon">💎</div>
-                        <div>
-                            <h3>Hammond Collection — Huevo</h3>
-                            <span>Réplica Coleccionable</span>
-                        </div>
-                    </div>
-                    <p>Réplica del icónico huevo de dinosaurio de la Hammond Collection. Base de exhibición incluida. Edición limitada para coleccionistas.</p>
-                    <div class="affiliate-meta">
-                        <span class="affiliate-price">44,99€</span>
-                        <span class="affiliate-commission">~3% comisión</span>
-                    </div>
-                    <!-- 🔗 CAMBIA ESTA URL POR TU ENLACE DE AFILIADO REAL -->
-                    <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                        <i class="fab fa-amazon"></i> Comprar en Amazon
-                    </a>
-                </div>
-
-                <!-- AFILIADO 5 -->
-                <div class="affiliate-card reveal">
-                    <div class="affiliate-card-header">
-                        <div class="affiliate-icon">👕</div>
-                        <div>
-                            <h3>Camiseta Jurassic Park</h3>
-                            <span>Oficial — Varios Modelos</span>
-                        </div>
-                    </div>
-                    <p>Camiseta oficial con el logo clásico de Jurassic Park. 100% algodón, disponible en varias tallas y colores. Licencia oficial Universal.</p>
-                    <div class="affiliate-meta">
-                        <span class="affiliate-price">19,99€</span>
-                        <span class="affiliate-commission">~7% comisión</span>
-                    </div>
-                    <!-- 🔗 CAMBIA ESTA URL POR TU ENLACE DE AFILIADO REAL -->
-                    <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                        <i class="fab fa-amazon"></i> Comprar en Amazon
-                    </a>
-                </div>
-
-                <!-- AFILIADO 6 -->
-                <div class="affiliate-card reveal">
-                    <div class="affiliate-card-header">
-                        <div class="affiliate-icon">📚</div>
-                        <div>
-                            <h3>El Mundo Perdido — Novela</h3>
-                            <span>Michael Crichton</span>
-                        </div>
-                    </div>
-                    <p>La novela original de Michael Crichton que inspiró la saga. Edición especial con ilustraciones y prólogo del 30 aniversario.</p>
-                    <div class="affiliate-meta">
-                        <span class="affiliate-price">14,99€</span>
-                        <span class="affiliate-commission">~5% comisión</span>
-                    </div>
-                    <!-- 🔗 CAMBIA ESTA URL POR TU ENLACE DE AFILIADO REAL -->
-                    <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan-21" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                        <i class="fab fa-amazon"></i> Comprar en Amazon
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         BLOG
-    ═══════════════════════════════════════════ -->
-    <section class="blog section" id="blog">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-label">Blog</div>
-                <h2 class="section-title">Últimos Artículos</h2>
-                <p class="section-subtitle">Guías, curiosidades y noticias sobre el universo jurásico</p>
-            </div>
-            <div class="blog-grid">
-
-                <article class="blog-card reveal">
-                    <div class="blog-image">
-                        🦖
-                        <span class="blog-category">Guías</span>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 15 Mayo 2025</span>
-                            <span><i class="far fa-clock"></i> 8 min</span>
-                        </div>
-                        <h3><a href="articulo-figuras-jurassic-world.html">Las 10 Figuras de Jurassic World que Todo Coleccionista Debe Tener</a></h3>
-                        <p>Desde la clásica Indominus Rex hasta las nuevas figuras de la Hammond Collection. Te contamos cuáles son imprescindibles y dónde encontrarlas al mejor precio.</p>
-                        <a href="articulo-figuras-jurassic-world.html" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card reveal">
-                    <div class="blog-image">
-                        🎬
-                        <span class="blog-category">Cine</span>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 10 Mayo 2025</span>
-                            <span><i class="far fa-clock"></i> 12 min</span>
-                        </div>
-                        <h3><a href="articulo-curiosidades-jurassic-park.html">Curiosidades de Jurassic Park que Probablemente No Conocías</a></h3>
-                        <p>Detrás de cámaras, errores de grabación, datos sobre los dinosaurios reales y mucho más. 30 años de la película que cambió el cine para siempre.</p>
-                        <a href="articulo-curiosidades-jurassic-park.html" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card reveal">
-                    <div class="blog-image">
-                        🎁
-                        <span class="blog-category">Regalos</span>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> 5 Mayo 2025</span>
-                            <span><i class="far fa-clock"></i> 6 min</span>
-                        </div>
-                        <h3><a href="articulo-regalos-jurassic-park.html">Los Mejores Regalos de Jurassic Park para el Día del Padre</a></h3>
-                        <p>¿Tu padre es fan de los dinosaurios? Aquí tienes una selección de regalos originales para sorprenderle, desde figuras premium hasta ropa exclusiva.</p>
-                        <a href="articulo-regalos-jurassic-park.html" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         NEWSLETTER
-    ═══════════════════════════════════════════ -->
-    <section class="newsletter section" id="contacto">
-        <div class="newsletter-inner">
-            <h2>🦕 Únete a la Manada</h2>
-            <p>Recibe las mejores ofertas, novedades y contenido exclusivo sobre Jurassic Park y World directamente en tu email.</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte! 🦖');">
-                <input type="email" placeholder="Tu email..." required>
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-paper-plane"></i> Suscribirme
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         FOOTER
-    ═══════════════════════════════════════════ -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <span class="logo-icon">🦕</span>
-                        JURASSIC<span>STORE</span>
-                    </a>
-                    <p>Tu tienda online de productos de Jurassic Park y Jurassic World. Figuras, ropa, decoración, juegos y coleccionismo. Envíos a toda España.</p>
-                    <div class="footer-social">
-                        <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://tiktok.com/" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://twitter.com/" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Tienda</h4>
-                    <ul>
-                        <li><a href="#productos">Figuras de Acción</a></li>
-                        <li><a href="#productos">Ropa y Complementos</a></li>
-                        <li><a href="#productos">Juegos y Puzzles</a></li>
-                        <li><a href="#afiliados">Decoración</a></li>
-                        <li><a href="#afiliados">Coleccionismo</a></li>
-                        <li><a href="#afiliados">Libros y Películas</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Blog</h4>
-                    <ul>
-                        <li><a href="articulo-figuras-jurassic-world.html">Top 10 Figuras</a></li>
-                        <li><a href="articulo-curiosidades-jurassic-park.html">Curiosidades del Cine</a></li>
-                        <li><a href="articulo-regalos-jurassic-park.html">Guía de Regalos</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Info</h4>
-                    <ul>
-                        <li><a href="https://affiliate-program.amazon.es/" target="_blank">Amazon Associates</a></li>
-                        <li><a href="https://www.amazon.es/gp/associates/join" target="_blank">Programa de Afiliados</a></li>
-                        <li><a href="javascript:void(0)" onclick="toggleAdmin(); return false;">⚙️ Panel Admin</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2025 Jurassic Fan Store. Todos los derechos reservados.</span>
-                <span>Producto afiliado de <a href="https://affiliate-program.amazon.es/" target="_blank">Amazon Associates</a> · <a href="#" onclick="toggleAdmin(); return false;">Admin</a></span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- COOKIE BANNER -->
-    <div class="cookie-banner" id="cookieBanner">
-        <span>🍪 Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href="#">política de cookies</a>.</span>
-        <button class="btn btn-primary" onclick="acceptCookies()">Aceptar</button>
+      </div>
     </div>
+  </section>
 
-    <!-- BACK TO TOP -->
-    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+  <!-- CATEGORIES SECTION -->
+  <section class="section" style="background:var(--bg-surface);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-eyebrow">Explora por temática</span>
+        <h2 class="section-title">¿Qué te apasiona?</h2>
+        <p class="section-desc">Desde la ciencia paleontológica hasta el merchandising coleccionable, tenemos contenido para todos los niveles de aficionado.</p>
+      </div>
+      <div class="grid-4" style="gap:20px;">
+        <a href="articulos.html?cat=paleontologia" style="text-decoration:none;">
+          <div class="article-card" style="text-align:center;cursor:pointer;">
+            <div style="padding:32px 24px 8px;">
+              <div style="font-size:2.8rem;margin-bottom:12px;">🦴</div>
+              <h3 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--white);margin-bottom:8px;">Paleontología</h3>
+              <p style="font-size:0.85rem;color:var(--text-muted);">Ciencia, hallazgos y fósiles</p>
+            </div>
+          </div>
+        </a>
+        <a href="articulos.html?cat=peliculas" style="text-decoration:none;">
+          <div class="article-card" style="text-align:center;cursor:pointer;">
+            <div style="padding:32px 24px 8px;">
+              <div style="font-size:2.8rem;margin-bottom:12px;">🎬</div>
+              <h3 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--white);margin-bottom:8px;">Películas</h3>
+              <p style="font-size:0.85rem;color:var(--text-muted);">Análisis de toda la saga</p>
+            </div>
+          </div>
+        </a>
+        <a href="articulos.html?cat=dinosaurios" style="text-decoration:none;">
+          <div class="article-card" style="text-align:center;cursor:pointer;">
+            <div style="padding:32px 24px 8px;">
+              <div style="font-size:2.8rem;margin-bottom:12px;">🦕</div>
+              <h3 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--white);margin-bottom:8px;">Dinosaurios</h3>
+              <p style="font-size:0.85rem;color:var(--text-muted);">Guías de especies</p>
+            </div>
+          </div>
+        </a>
+        <a href="tienda.html" style="text-decoration:none;">
+          <div class="article-card" style="text-align:center;cursor:pointer;border-color:var(--amber-border);">
+            <div style="padding:32px 24px 8px;">
+              <div style="font-size:2.8rem;margin-bottom:12px;">🛍️</div>
+              <h3 style="font-family:var(--font-heading);font-size:1.1rem;color:var(--amber-light);margin-bottom:8px;">Tienda</h3>
+              <p style="font-size:0.85rem;color:var(--text-muted);">Los mejores productos</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- ═══════════════════════════════════════════
-         JAVASCRIPT
-    ═══════════════════════════════════════════ -->
-    <script>
-        // PRELOADER
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('preloader').classList.add('hidden');
-            }, 800);
-        });
+  <!-- FEATURED PRODUCTS (teaser) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <span class="section-eyebrow">Selección de la semana</span>
+          <h2 class="section-title" style="margin-bottom:6px;">Nuestras recomendaciones</h2>
+          <p style="color:var(--text-secondary);font-size:0.9rem;max-width:500px;">Los productos más valorados por nuestra comunidad. Seleccionados editorialmente, sin patrocinios.</p>
+        </div>
+        <a href="tienda.html" class="btn btn--amber">Ver tienda completa →</a>
+      </div>
 
-        // HEADER SCROLL
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
+      <div class="affiliate-notice">
+        Este sitio participa en el programa de afiliados de Amazon. Al comprar a través de nuestros enlaces, 
+        recibes el mismo precio y nosotros obtenemos una pequeña comisión que nos ayuda a mantener el contenido gratuito.
+      </div>
 
-        // MOBILE NAV
-        const hamburger = document.getElementById('hamburger');
-        const navMobile = document.getElementById('navMobile');
-        const navClose = document.getElementById('navClose');
+      <div class="grid-3">
 
-        hamburger.addEventListener('click', () => navMobile.classList.add('open'));
-        navClose.addEventListener('click', () => navMobile.classList.remove('open'));
-        navMobile.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => navMobile.classList.remove('open'));
-        });
+        <div class="product-card" data-category="lego">
+          <div class="product-card__badge">★ TOP VENTAS</div>
+          <div class="product-card__image">
+            <div style="font-size:3.5rem;">🧱</div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">LEGO · Jurassic World</span>
+            <h3 class="product-card__title">LEGO Jurassic World — T. Rex Breakout (76956)</h3>
+            <div class="product-card__rating">
+              <span class="product-card__stars">★★★★★</span>
+              <span class="product-card__rating-count">(2.847 reseñas)</span>
+            </div>
+            <div class="product-card__price-row">
+              <div>
+                <span class="product-card__price">49,99€</span>
+                <span class="product-card__old-price">64,99€</span>
+              </div>
+              <a href="https://www.amazon.es/dp/B09NTYTF3W?tag=jurassicfan21-21" target="_blank" rel="noopener nofollow" class="product-card__btn" data-affiliate="lego-trex-76956">
+                Ver en Amazon →
+              </a>
+            </div>
+          </div>
+        </div>
 
-        // PARTICLES
-        const particlesContainer = document.getElementById('particles');
-        for (let i = 0; i < 30; i++) {
-            const p = document.createElement('div');
-            p.className = 'particle';
-            p.style.left = Math.random() * 100 + '%';
-            p.style.animationDuration = (Math.random() * 15 + 10) + 's';
-            p.style.animationDelay = (Math.random() * 10) + 's';
-            p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
-            particlesContainer.appendChild(p);
-        }
+        <div class="product-card" data-category="figuras">
+          <div class="product-card__image">
+            <div style="font-size:3.5rem;">🦖</div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Figuras · Coleccionables</span>
+            <h3 class="product-card__title">Jurassic World — Massive Biters T-Rex con mandíbulas articuladas</h3>
+            <div class="product-card__rating">
+              <span class="product-card__stars">★★★★☆</span>
+              <span class="product-card__rating-count">(1.203 reseñas)</span>
+            </div>
+            <div class="product-card__price-row">
+              <div>
+                <span class="product-card__price">34,99€</span>
+              </div>
+              <a href="https://www.amazon.es/dp/B09QJLZ3HT?tag=jurassicfan21-21" target="_blank" rel="noopener nofollow" class="product-card__btn" data-affiliate="massive-biters-trex">
+                Ver en Amazon →
+              </a>
+            </div>
+          </div>
+        </div>
 
-        // SCROLL REVEAL
-        const reveals = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 100);
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        reveals.forEach(el => revealObserver.observe(el));
+        <div class="product-card" data-category="libros">
+          <div class="product-card__image">
+            <div style="font-size:3.5rem;">📚</div>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Libros</span>
+            <h3 class="product-card__title">Parque Jurásico — Michael Crichton (edición ilustrada)</h3>
+            <div class="product-card__rating">
+              <span class="product-card__stars">★★★★★</span>
+              <span class="product-card__rating-count">(8.412 reseñas)</span>
+            </div>
+            <div class="product-card__price-row">
+              <div>
+                <span class="product-card__price">16,99€</span>
+              </div>
+              <a href="https://www.amazon.es/s?k=Parque+Jurasico+Michael+Crichton&tag=jurassicfan21-21" target="_blank" rel="noopener nofollow" class="product-card__btn" data-affiliate="jurassic-park-libro">
+                Ver en Amazon →
+              </a>
+            </div>
+          </div>
+        </div>
 
-        // BACK TO TOP
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('visible', window.scrollY > 500);
-        });
+      </div>
+    </div>
+  </section>
 
-        // COOKIE BANNER
-        function acceptCookies() {
-            document.getElementById('cookieBanner').classList.remove('show');
-            localStorage.setItem('cookiesAccepted', 'true');
-        }
-        if (localStorage.getItem('cookiesAccepted') !== 'true') {
-            setTimeout(() => {
-                document.getElementById('cookieBanner').classList.add('show');
-            }, 2000);
-        }
+  <!-- MORE ARTICLES (scheduled) -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Próximas publicaciones</span>
+        <h2 class="section-title">En camino</h2>
+      </div>
+      <div class="grid-3">
 
-        // SMOOTH SCROLL for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+        <article class="article-card" data-publish-date="2025-06-15">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🧪</div>
+            <span class="article-card__badge">Ciencia</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Genética</span>
+            <h3 class="article-card__title">
+              <a href="articles/adn-dinosaurio-posible.html">¿Podría existir realmente el ADN de un dinosaurio? La ciencia detrás del Parque Jurásico</a>
+            </h3>
+            <p class="article-card__excerpt">Crichton lo imaginó con ámbar y mosquitos. Los científicos llevan décadas buscando la respuesta real.</p>
+            <div class="article-card__meta">
+              <span>15 Jun 2025</span>
+              <span class="article-card__read-time">⏱ 10 min</span>
+            </div>
+          </div>
+        </article>
 
-        // ═══════════════════════════════════════════
-        // ADMIN LOGIN
-        // ═══════════════════════════════════════════
-        const ADMIN_PASSWORD_KEY = 'jurassic_admin_pass';
-        const DEFAULT_PASSWORD = 'jurassic2025';
+        <article class="article-card" data-publish-date="2025-07-15">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🏆</div>
+            <span class="article-card__badge">Guía</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Coleccionables</span>
+            <h3 class="article-card__title">
+              <a href="articles/mejores-figuras-jurassic.html">Las mejores figuras y coleccionables de Jurassic Park en 2025</a>
+            </h3>
+            <p class="article-card__excerpt">Desde Funko Pop hasta réplicas premium: selección completa para fans y coleccionistas.</p>
+            <div class="article-card__meta">
+              <span>15 Jul 2025</span>
+              <span class="article-card__read-time">⏱ 12 min</span>
+            </div>
+          </div>
+        </article>
 
-        function adminLogin() {
-            const input = document.getElementById('adminPassword');
-            const error = document.getElementById('adminLoginError');
-            const password = input.value.trim();
+        <article class="article-card" data-publish-date="2025-08-01">
+          <div class="article-card__image">
+            <div class="article-card__image-placeholder">🔬</div>
+            <span class="article-card__badge">Ciencia</span>
+          </div>
+          <div class="article-card__body">
+            <span class="article-card__category">Paleontología</span>
+            <h3 class="article-card__title">
+              <a href="articles/dinosaurios-inteligentes.html">¿Eran inteligentes los dinosaurios? Lo que revelan los últimos estudios</a>
+            </h3>
+            <p class="article-card__excerpt">El tamaño del cerebro, el comportamiento social y los descubrimientos recientes apuntan a algo sorprendente.</p>
+            <div class="article-card__meta">
+              <span>1 Ago 2025</span>
+              <span class="article-card__read-time">⏱ 8 min</span>
+            </div>
+          </div>
+        </article>
 
-            if (password === DEFAULT_PASSWORD) {
-                localStorage.setItem(ADMIN_PASSWORD_KEY, password);
-                document.getElementById('adminLogin').classList.remove('open');
-                document.getElementById('adminPanel').classList.add('open');
-                loadAdminProducts();
-            } else {
-                error.classList.add('show');
-                input.value = '';
-                input.focus();
-            }
-        }
+      </div>
+    </div>
+  </section>
 
-        // Allow Enter key to submit login
-        document.addEventListener('DOMContentLoaded', () => {
-            const pwInput = document.getElementById('adminPassword');
-            if (pwInput) {
-                pwInput.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter') adminLogin();
-                });
-            }
-        });
+  <!-- QUIZ INTERACTIVO -->
+  <section class="section--sm" id="quiz-section">
+    <div class="container">
+      <div class="quiz-trigger-card" id="quiz-trigger">
+        <h3>🦕 ¿Qué dinosaurio eres?</h3>
+        <p style="color:var(--text-muted); margin-bottom:1rem;">3 preguntas para descubrir tu espíritu prehistórico</p>
+        <span class="btn btn--primary">Hacer el quiz →</span>
+      </div>
+    </div>
+  </section>
 
-        // ═══════════════════════════════════════════
-        // ADMIN PANEL
-        // ═══════════════════════════════════════════
-        let productsData = null;
+  <!-- MODAL QUIZ -->
+  <div id="quiz-modal" role="dialog" aria-modal="true" aria-label="Quiz: ¿Qué dinosaurio eres?">
+    <div class="quiz-container">
+      <button class="quiz-close" aria-label="Cerrar">✕</button>
+      <div class="quiz-body"></div>
+    </div>
+  </div>
 
-        // Check if admin mode via URL
-        function checkAdminMode() {
-            const params = new URLSearchParams(window.location.search);
-            if (params.get('admin') === '1') {
-                const savedPass = localStorage.getItem(ADMIN_PASSWORD_KEY);
-                if (savedPass === DEFAULT_PASSWORD) {
-                    document.getElementById('adminPanel').classList.add('open');
-                    loadAdminProducts();
-                } else {
-                    document.getElementById('adminLogin').classList.add('open');
-                }
-            }
-        }
+  <!-- PRÓXIMO ARTÍCULO + CONTADOR VIVO -->
+  <section class="section--sm">
+    <div class="container">
+      <div class="next-article-box">
+        <span style="font-size:1.8rem">📅</span>
+        <div>
+          <div class="next-article-box__label">Próximo artículo en…</div>
+          <div class="next-article-box__title">¿Es posible clonar dinosaurios con ADN real?</div>
+        </div>
+        <span id="next-article-countdown" data-date="2025-06-15T09:00:00">Calculando…</span>
+      </div>
+      <div style="text-align:right; margin-top:0.5rem">
+        <span class="live-counter">
+          <span class="live-counter__dot"></span>
+          <span class="live-counter__number">—</span>
+          <span>personas leyendo ahora</span>
+        </span>
+      </div>
+    </div>
+  </section>
 
-        function toggleAdmin() {
-            const login = document.getElementById('adminLogin');
-            const panel = document.getElementById('adminPanel');
-            
-            if (panel.classList.contains('open')) {
-                panel.classList.remove('open');
-            } else {
-                const savedPass = localStorage.getItem(ADMIN_PASSWORD_KEY);
-                if (savedPass === DEFAULT_PASSWORD) {
-                    panel.classList.add('open');
-                    if (!productsData) loadAdminProducts();
-                } else {
-                    login.classList.add('open');
-                    setTimeout(() => document.getElementById('adminPassword').focus(), 100);
-                }
-            }
-        }
+  <!-- NEWSLETTER -->
+  <section class="section--sm">
+    <div class="container">
+      <div class="newsletter-banner">
+        <h2 class="newsletter-banner__title">🦕 Recibe cada artículo nuevo</h2>
+        <p class="newsletter-banner__desc">
+          Cada dos semanas, un nuevo artículo en tu bandeja de entrada. Sin spam. Solo dinosaurios.
+        </p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="tu@email.com" aria-label="Tu email" />
+          <button type="submit" class="btn btn--primary">Suscribirme</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-        async function loadAdminProducts() {
-            try {
-                const resp = await fetch('products.json');
-                productsData = await resp.json();
-                renderProductsTable();
-            } catch (e) {
-                console.error('Error loading products:', e);
-                document.getElementById('productsTableBody').innerHTML = 
-                    '<tr><td colspan="7" style="color:var(--danger)">Error cargando products.json</td></tr>';
-            }
-        }
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <span class="footer__brand-text">JURASSIC <span class="accent">HUB</span></span>
+          <p class="footer__tagline">
+            El portal de referencia en español sobre dinosaurios, 
+            la saga Jurassic Park y paleontología. Contenido independiente desde 2025.
+          </p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">🎵</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Contenido</h4>
+          <ul class="footer__links">
+            <li><a href="articulos.html">Todos los artículos</a></li>
+            <li><a href="articulos.html?cat=paleontologia">Paleontología</a></li>
+            <li><a href="articulos.html?cat=peliculas">Películas</a></li>
+            <li><a href="articulos.html?cat=dinosaurios">Dinosaurios</a></li>
+            <li><a href="articulos.html?cat=ciencia">Ciencia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Tienda</h4>
+          <ul class="footer__links">
+            <li><a href="tienda.html">Ver todo</a></li>
+            <li><a href="tienda.html?cat=lego">LEGO Jurassic</a></li>
+            <li><a href="tienda.html?cat=figuras">Figuras</a></li>
+            <li><a href="tienda.html?cat=libros">Libros</a></li>
+            <li><a href="tienda.html?cat=ropa">Ropa</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Sitio</h4>
+          <ul class="footer__links">
+            <li><a href="sobre-nosotros.html">Sobre Jurassic Hub</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="politica-privacidad.html">Privacidad</a></li>
+            <li><a href="aviso-legal.html">Aviso legal</a></li>
+            <li><a href="politica-cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2025 Jurassic Hub · Todos los derechos reservados</span>
+        <span>Participante en Amazon Associates · <a href="politica-privacidad.html">Política de afiliados</a></span>
+      </div>
+    </div>
+  </footer>
 
-        function renderProductsTable() {
-            const tbody = document.getElementById('productsTableBody');
-            if (!productsData || !productsData.products) return;
-            
-            tbody.innerHTML = productsData.products.map(p => `
-                <tr>
-                    <td>${p.id}</td>
-                    <td title="${p.name}">${p.name.substring(0,40)}${p.name.length>40?'...':''}</td>
-                    <td><code>${p.asin}</code></td>
-                    <td>${p.price}</td>
-                    <td>${p.category}</td>
-                    <td><a href="${p.affiliate_url}" target="_blank" style="color:var(--accent);font-size:0.75rem;">Ver enlace</a></td>
-                    <td>
-                        <button class="btn btn-ghost btn-sm" onclick="deleteProduct(${p.id})" style="color:var(--danger);border-color:var(--danger);">
-                            🗑️
-                        </button>
-                    </td>
-                </tr>
-            `).join('');
-        }
-
-        function addProduct(e) {
-            e.preventDefault();
-            if (!productsData) return false;
-
-            const newProduct = {
-                id: Math.max(...productsData.products.map(p => p.id)) + 1,
-                asin: document.getElementById('npAsin').value.trim(),
-                name: document.getElementById('npName').value.trim(),
-                brand: document.getElementById('npBrand').value.trim(),
-                category: document.getElementById('npCategory').value,
-                description: document.getElementById('npDesc').value.trim(),
-                price: document.getElementById('npPrice').value.trim(),
-                original_price: document.getElementById('npOriginal').value.trim() || '',
-                discount: '',
-                rating: 4.5,
-                reviews: 0,
-                badge: document.getElementById('npBadge').value,
-                badge_text: document.getElementById('npBadge').value === 'hot' ? '🔥 Hot' : 
-                             document.getElementById('npBadge').value === 'new' ? 'Nuevo' : 
-                             document.getElementById('npBadge').value === 'sale' ? '🏷️ Oferta' : '',
-                icon: document.getElementById('npIcon').value.trim() || '🦖',
-                affiliate_url: document.getElementById('npUrl').value.trim()
-            };
-
-            productsData.products.push(newProduct);
-            renderProductsTable();
-            
-            // Download updated JSON
-            const blob = new Blob([JSON.stringify(productsData, null, 2)], {type: 'application/json'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'products.json';
-            a.click();
-            URL.revokeObjectURL(url);
-
-            alert('✅ Producto añadido. Se ha descargado el archivo products.json actualizado.\n\nSube el archivo nuevo al repo con:\ngit add products.json\ngit commit -m "Nuevo producto: ' + newProduct.name + '"\ngit push');
-            
-            document.getElementById('newProductForm').reset();
-            return false;
-        }
-
-        function deleteProduct(id) {
-            if (!confirm('¿Eliminar producto #' + id + '?')) return;
-            if (!productsData) return;
-            productsData.products = productsData.products.filter(p => p.id !== id);
-            renderProductsTable();
-            
-            // Download updated JSON
-            const blob = new Blob([JSON.stringify(productsData, null, 2)], {type: 'application/json'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'products.json';
-            a.click();
-            URL.revokeObjectURL(url);
-
-            alert('🗑️ Producto eliminado. Descarga el nuevo products.json y súbelo al repo.');
-        }
-
-        // Init admin check
-        checkAdminMode();
-    </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

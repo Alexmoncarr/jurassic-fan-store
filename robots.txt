@@ -1,7 +1,25 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jurassicfanstore.es/sitemap.xml
+User-agent: GPTBot
+Allow: /
 
-# Crawl-delay
-Crawl-delay: 1
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://alexmoncarr.github.io/jurassic-fan-store/sitemap.xml
