@@ -1,10 +1,8 @@
-name: Build & Deploy Jurassic Hub (React)
+name: Deploy Jurassic Hub (React — pre-built)
 
 on:
   push:
     branches: [main]
-  schedule:
-    - cron: '0 8 * * 1'  # Lunes 08:00 UTC
   workflow_dispatch:
 
 permissions:
@@ -17,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -26,25 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build React app
-        run: npm run build
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
