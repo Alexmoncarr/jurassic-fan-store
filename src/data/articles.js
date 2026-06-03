@@ -8,13 +8,25 @@ export const articles = [
     readTime: 8,
     publishDate: '2025-05-01',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg/1280px-Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg/1200px-Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg',
     tags: ['Patagotitan', 'Titanosaurios', 'Records', 'Paleontología'],
     faq: [
       { q: '¿Cuál fue el dinosaurio más grande?', a: 'El Patagotitan mayorum, con hasta 37 metros y 77 toneladas.' },
       { q: '¿Era el T-Rex el más grande?', a: 'No, era el mayor depredador bípedo, pero varios saurópodos lo triplicaban en masa.' },
     ],
-    content: `
+    inlineImages: [
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg/800px-Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg",
+    "caption": "El Patagotitan mayorum en el Museo de Historia Natural de Utah. Su fémur mide más de 2,4 metros.",
+    "after": "Patagotitan mayorum — El campeón científico"
+  },
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Trex_sue_t.jpg/800px-Trex_sue_t.jpg",
+    "caption": "Sue, el T-Rex más completo conocido. Con sus 12 toneladas, es enano frente a los titanosaurios.",
+    "after": "El T-Rex en perspectiva"
+  }
+],
+        content: `
 ## Los gigantes que dominaron la Tierra
 
 Durante el Cretácico tardío, la Patagonia argentina fue escenario de una hazaña evolutiva sin precedentes: allí caminaron los animales terrestres más grandes que jamás han existido.
@@ -76,13 +88,20 @@ Lo que hace único al T-Rex no es su tamaño sino la combinación de fuerza de m
     readTime: 6,
     publishDate: '2025-05-12',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Spinosaurus_skeleton.jpg/1280px-Spinosaurus_skeleton.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Spinosaurus_skeleton.jpg/1200px-Spinosaurus_skeleton.jpg',
     tags: ['T-Rex', 'Spinosaurus', 'Debate', 'Paleontología'],
     faq: [
       { q: '¿Podría el T-Rex ganar al Spinosaurus?', a: 'Nunca se enfrentaron: vivieron en continentes y épocas distintas. El T-Rex tenía mayor masa y la mordida más potente de la historia.' },
       { q: '¿Era el Spinosaurus acuático?', a: 'Sí, el hallazgo de 2014 lo confirmó: huesos densos, patas cortas y columna de cocodrilo. Era semiacuático.' },
     ],
-    content: `
+    inlineImages: [
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Spinosaurus_skeleton.jpg/800px-Spinosaurus_skeleton.jpg",
+    "caption": "Esqueleto de Spinosaurus en exposición. Sus patas cortas y huesos densos confirman su estilo de vida semiacuático.",
+    "after": "La revolución de 2014"
+  }
+],
+        content: `
 ## La batalla que no pudo ocurrir
 
 **Jurassic Park III** (2001) provocó décadas de debate mostrando al Spinosaurus matando a un T-Rex en los primeros 5 minutos de película. El fandom se dividió. La ciencia tiene la respuesta definitiva: ese combate jamás ocurrió, y no podría haber ocurrido.
@@ -149,7 +168,7 @@ Si ignoramos la imposibilidad histórica y geográfica, ¿quién ganaría?
     readTime: 7,
     publishDate: '2025-04-28',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e7/Jurassic_Park_poster.jpg/800px-Jurassic_Park_poster.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/John_Hammond_Jurassic_Park.jpg/1200px-John_Hammond_Jurassic_Park.jpg',
     tags: ['Spielberg', '1993', 'CGI', 'Legado', 'Cine'],
     faq: [
       { q: '¿Cuándo se estrenó Jurassic Park?', a: 'El 11 de junio de 1993. Dirigida por Steven Spielberg y producida por Universal Pictures.' },
@@ -217,13 +236,20 @@ John Hammond y su equipo no son villanos: son entusiastas que creyeron que podí
     readTime: 9,
     publishDate: '2025-06-15',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Amber_dagger.jpg/1280px-Amber_dagger.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Amber_dagger.jpg/1200px-Amber_dagger.jpg',
     tags: ['ADN', 'Clonación', 'Biotecnología', 'Ciencia ficción vs. realidad'],
     faq: [
       { q: '¿Se puede clonar un dinosaurio?', a: 'No con la tecnología actual. El ADN se degrada completamente en 521.000 años, y los dinosaurios se extinguieron hace 66 millones de años.' },
       { q: '¿Existe ADN de dinosaurio en ámbar?', a: 'No. El ámbar conserva la morfología pero no el material genético. Los insectos en ámbar de la época de los dinosaurios no contienen ADN recuperable.' },
     ],
-    content: `
+    inlineImages: [
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Amber_dagger.jpg/800px-Amber_dagger.jpg",
+    "caption": "Ámbar con insectos preservados. Hermoso, pero el ADN que contiene lleva degradado millones de años.",
+    "after": "El problema del ADN"
+  }
+],
+        content: `
 ## La pregunta que hace 30 años Spielberg convirtió en espectáculo
 
 Cuando en 1993 los científicos de Jurassic Park extrajeron ADN de un mosquito preservado en ámbar, parecía científicamente plausible. Hoy sabemos que es imposible. Pero la ciencia real avanza en direcciones que Crichton quizás no imaginó.
@@ -268,13 +294,20 @@ El parque de Crichton seguirá siendo ficción. Pero la ciencia real es, si cabe
     readTime: 7,
     publishDate: '2025-07-01',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Velociraptor_mongoliensis.jpg/1280px-Velociraptor_mongoliensis.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Velociraptor_mongoliensis.jpg/1200px-Velociraptor_mongoliensis.jpg',
     tags: ['Velociraptor', 'Mitos', 'Plumas', 'Paleontología'],
     faq: [
       { q: '¿Tenían plumas los Velociraptores?', a: 'Sí. El Velociraptor tenía plumas en los brazos. Los puntos de inserción de plumas en el radio del fósil lo confirman definitivamente.' },
       { q: '¿De qué tamaño era realmente el Velociraptor?', a: 'Unos 50-60 cm de alto y 1,8 metros de largo, del tamaño de un pavo grande. Los "raptores" de Jurassic Park en realidad están basados en el Deinonychus.' },
     ],
-    content: `
+    inlineImages: [
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Velociraptor_mongoliensis.jpg/800px-Velociraptor_mongoliensis.jpg",
+    "caption": "Esqueleto de Velociraptor mongoliensis. Compáralo con la escala humana: era del tamaño de un pavo.",
+    "after": "Mito 1"
+  }
+],
+        content: `
 ## El animal más famoso que nunca fue como lo imaginaste
 
 El **Velociraptor mongoliensis** es probablemente el dinosaurio más reconocido del mundo gracias a Jurassic Park. Y también el más tergiversado. Casi todo lo que el cine muestra de él es ficticio o está exagerado al menos el doble.
@@ -317,7 +350,7 @@ Era rápido (hasta 25 km/h en sprints cortos), tenía un sistema nervioso avanza
     readTime: 10,
     publishDate: '2025-07-15',
     published: true,
-    image: 'https://m.media-amazon.com/images/I/71qLLhXwFxL._AC_SL500_.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Trex_sue_t.jpg/1200px-Trex_sue_t.jpg',
     tags: ['Figuras', 'Guía compra', 'Amazon', 'Recomendaciones 2025'],
     faq: [
       { q: '¿Qué figura de Jurassic World es la mejor para adultos?', a: 'La Hammond Collection de Mattel ofrece el mejor nivel de detalle y fidelidad para coleccionistas adultos. La Indominus Rex articulada es la más popular.' },
@@ -364,7 +397,7 @@ Las figuras sin marca o de fabricantes desconocidos en Amazon que imitan los set
     readTime: 8,
     publishDate: '2025-10-01',
     published: true,
-    image: 'https://m.media-amazon.com/images/I/81HbKkFetBL._AC_SL500_.jpg',
+    image: 'https://cdn.rebrickable.com/media/sets/76956-1.jpg',
     tags: ['LEGO', 'Guía compra', '2025', 'Sets'],
     faq: [
       { q: '¿Cuál es el mejor set LEGO Jurassic para adultos?', a: 'El 76956 T-Rex Breakout (1212 piezas, ~90€) o el 75936 T-Rex Rampage (3120 piezas, ~250€) para coleccionistas exigentes.' },
@@ -410,13 +443,20 @@ LEGO lanzó en 2024 el **76968 Dinosaur Fossils: T-Rex** (18+), un set completam
     readTime: 6,
     publishDate: '2025-10-15',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Ornithomimus_edmontonicus.jpg/1280px-Ornithomimus_edmontonicus.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Ornithomimus_edmontonicus.jpg/1200px-Ornithomimus_edmontonicus.jpg',
     tags: ['Velocidad', 'Anatomía', 'Paleontología', 'Top 10'],
     faq: [
       { q: '¿Podía el T-Rex alcanzar a una persona corriendo?', a: 'Probablemente sí. Las estimaciones de velocidad del T-Rex oscilan entre 12 y 29 km/h. Un humano en forma corre 15-20 km/h de media.' },
       { q: '¿Cuál era el dinosaurio más rápido?', a: 'Probablemente los ornitomímidos como el Gallimimus. Se estiman velocidades de hasta 60-80 km/h, similares a un avestruz moderno.' },
     ],
-    content: `
+    inlineImages: [
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Ornithomimus_edmontonicus.jpg/800px-Ornithomimus_edmontonicus.jpg",
+    "caption": "Ornithomimus edmontonicus. Su estructura ósea es la de un corredor nato: fémur corto, tibia larga, pies ligeros.",
+    "after": "El Top 10"
+  }
+],
+        content: `
 ## Medir la velocidad de un animal extinto
 
 Calcular la velocidad de un dinosaurio no es tarea fácil. Los paleontólogos usan tres métodos principales:
@@ -481,13 +521,20 @@ Jurassic Park muestra Velociraptores alcanzando a un vehículo a 60 km/h. La rea
     readTime: 7,
     publishDate: '2025-11-01',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Trex_sue_t.jpg/1280px-Trex_sue_t.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Trex_sue_t.jpg/1200px-Trex_sue_t.jpg',
     tags: ['T-Rex', 'Paleontología', 'Ciencia', 'Biomecánica'],
     faq: [
       { q: '¿Era el T-Rex cazador o carroñero?', a: 'Probablemente ambas cosas. Los estudios actuales sugieren que era principalmente cazador activo con comportamiento oportunista de carroña, como hacen los leones y los tigres modernos.' },
       { q: '¿Qué dice el fósil "Hell Creek" sobre la caza del T-Rex?', a: 'Varios fósiles muestran marcas de mordisco del T-Rex en huesos de presas que presentaban signos de curación posterior, lo que prueba que atacó a animales vivos.' },
     ],
-    content: `
+    inlineImages: [
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Trex_sue_t.jpg/800px-Trex_sue_t.jpg",
+    "caption": "Sue, el T-Rex más completo del mundo en el Field Museum de Chicago. Sus análisis óseos revelan marcas de batalla supervividas.",
+    "after": "Las pruebas que demuestran la caza activa"
+  }
+],
+        content: `
 ## El origen del debate
 
 En 1917, el paleontólogo Lawrence Lambe propuso que el T-Rex era demasiado lento para cazar activamente. Pero fue Jack Horner (el asesor real de Jurassic Park) quien en los años 90 reformuló el argumento con datos modernos: visión pequeña, brazos inútiles, velocidad limitada. Su conclusión: el T-Rex era un carroñero especializado, el "buitre gigante del Cretácico".
@@ -536,13 +583,20 @@ La escena del cubo de agua vibrando por los pasos del T-Rex sí es científicame
     readTime: 5,
     publishDate: '2025-11-15',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Pteranodon_longiceps_mmartyniuk_wiki.png/1280px-Pteranodon_longiceps_mmartyniuk_wiki.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Pteranodon_longiceps_mmartyniuk_wiki.png/1200px-Pteranodon_longiceps_mmartyniuk_wiki.png',
     tags: ['Pterosaurios', 'Ciencia', 'Taxonomía', 'Divulgación'],
     faq: [
       { q: '¿Son los pterodáctilos dinosaurios?', a: 'No. Los pterosaurios son reptiles voladores extintos que pertenecen a un grupo hermano de los dinosaurios, el clado Pterosauria, dentro del superorden Archosauria. Son parientes, pero no dinosaurios.' },
       { q: '¿Cuándo vivieron los pterosaurios?', a: 'Desde el Triásico tardío (~230 Ma) hasta el final del Cretácico (~66 Ma), los mismos 65 millones de años de extinción masiva que los dinosaurios.' },
     ],
-    content: `
+    inlineImages: [
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Pteranodon_longiceps_mmartyniuk_wiki.png/800px-Pteranodon_longiceps_mmartyniuk_wiki.png",
+    "caption": "Reconstrucción de Pteranodon longiceps. La cresta craneal no tenía función de vuelo sino de reconocimiento social.",
+    "after": "La confusión más extendida"
+  }
+],
+        content: `
 ## La confusión más extendida
 
 "Pterodáctilo" es el nombre coloquial del Pterodactylus antiquus, un pterosaurio del Jurásico tardío. Y aunque Jurassic Park, Jurassic World y casi toda la cultura popular los presentan junto a los dinosaurios, son animales distintos aunque emparentados.
@@ -594,13 +648,20 @@ Durante el Cretácico, los pterosaurios gigantes como el Quetzalcoatlus dominaba
     readTime: 8,
     publishDate: '2025-12-01',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sinosauropteryx_prima.jpg/1280px-Sinosauropteryx_prima.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sinosauropteryx_prima.jpg/1200px-Sinosauropteryx_prima.jpg',
     tags: ['Plumas', 'Colores', 'Paleontología', 'Evolución'],
     faq: [
       { q: '¿Tenían plumas los dinosaurios?', a: 'Muchos sí. Las aves actuales son dinosaurios emplumados. La evidencia fósil indica que las plumas evolucionaron antes de que las aves aprendieran a volar, probablemente para termorregulación o exhibición sexual.' },
       { q: '¿De qué color eran los dinosaurios?', a: 'Algunos están documentados con colores específicos gracias a melanosomas fósiles. El Sinosauropteryx tenía rayas rojizas y blancas; el Microraptor era iridiscente negro azulado, como un cuervo.' },
     ],
-    content: `
+    inlineImages: [
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sinosauropteryx_prima.jpg/800px-Sinosauropteryx_prima.jpg",
+    "caption": "Fósil de Sinosauropteryx prima. Las impresiones de plumas son claramente visibles alrededor del cuello y la espalda.",
+    "after": "La revolución paleontológica de los años 90"
+  }
+],
+        content: `
 ## La revolución paleontológica de los años 90
 
 Mientras Jurassic Park estrenaba en 1993, los paleontólogos en China estaban desenterrando algo que cambiaría para siempre nuestra imagen de los dinosaurios: el **Sinosauropteryx prima**, el primer dinosaurio no-aviar encontrado con plumas preservadas como impresiones fósiles.
@@ -655,7 +716,7 @@ Los velociraptores de la película, sin embargo, habrían tenido plumas con alta
     readTime: 6,
     publishDate: '2025-12-15',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Diplodocus_carnegii_hatcher.jpg/1280px-Diplodocus_carnegii_hatcher.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg/1200px-Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg',
     tags: ['Documentales', 'Recomendaciones', 'Streaming', 'CGI'],
     faq: [
       { q: '¿Cuál es el mejor documental de dinosaurios de todos los tiempos?', a: 'Walking with Dinosaurs (BBC, 1999) fue revolucionario y sigue siendo una referencia. Pero Prehistoric Planet (Apple TV+, 2022) es científicamente superior y visualmente impresionante.' },
@@ -756,7 +817,7 @@ Para los más jóvenes. Una serie animada con rigor científico sorprendente par
     readTime: 7,
     publishDate: '2026-01-01',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg/1280px-Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg/1200px-Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg',
     tags: ['Descubrimientos', '2025', 'Paleontología', 'Ciencia'],
     faq: [
       { q: '¿Cuál fue el mayor descubrimiento paleontológico de 2025?', a: 'El análisis completo de "Elpistostegalian" desde Marruecos y varios titanosuarios nuevos en Argentina figuran entre los más significativos, aunque el año trajo muchas sorpresas.' },
@@ -821,7 +882,7 @@ Para 2026, los paleontólogos esperan la descripción formal del titanosaurio ar
     readTime: 12,
     publishDate: '2026-01-15',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Isla_Nublar_map.jpg/800px-Isla_Nublar_map.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Trex_sue_t.jpg/1200px-Trex_sue_t.jpg',
     tags: ['Cronología', 'Lore', 'Historia', 'Jurassic World'],
     faq: [
       { q: '¿Cuándo ocurren los eventos de Jurassic Park?', a: 'Jurassic Park (1993) tiene lugar en 1993 en la película homónima, aunque la novela de Crichton se publicó en 1990. El Mundo Perdido ocurre en 1997, JP III en 2001.' },
@@ -906,7 +967,7 @@ Los dinosaurios llevan cuatro años conviviendo con los humanos en el mundo. La 
     readTime: 9,
     publishDate: '2026-02-01',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Trex_sue_t.jpg/1280px-Trex_sue_t.jpg',
+    image: 'https://cdn.rebrickable.com/media/sets/75936-1.jpg',
     tags: ['Coleccionables', 'Guía de compra', 'LEGO', 'Hammond Collection'],
     faq: [
       { q: '¿Cuál es la mejor figura de dinosaurio para adultos coleccionistas?', a: 'La Hammond Collection de Mattel es el estándar del mercado: ojos de cristal, detalles anatómicos de película, articulación precisa y escala consistente entre figuras. Para nivel premium, las resinas de Prime 1 Studio.' },
@@ -998,13 +1059,20 @@ Para los más jóvenes, los libros de la **DK Encyclopaedia of Dinosaurs** son l
     readTime: 8,
     publishDate: '2026-02-15',
     published: true,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Spinosaurus_skeleton.jpg/1280px-Spinosaurus_skeleton.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Spinosaurus_skeleton.jpg/1200px-Spinosaurus_skeleton.jpg',
     tags: ['Spinosaurus', 'Acuático', 'Descubrimientos', 'Marruecos'],
     faq: [
       { q: '¿Era el Spinosaurus acuático?', a: 'Las evidencias actuales sugieren que era semiacuático: pasaba tiempo significativo en el agua cazando peces, pero también podía moverse en tierra. La posición de las fosas nasales y la densidad ósea inusual (como los buceadores) apuntan a adaptaciones acuáticas.' },
       { q: '¿Era el Spinosaurus más grande que el T-Rex?', a: 'Sí, en longitud. El Spinosaurus pudo alcanzar los 14-15 metros frente a los 12-13 del T-Rex más grande conocido. Sin embargo, el T-Rex era más robusto y pesado proporcionalmente.' },
     ],
-    content: `
+    inlineImages: [
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Spinosaurus_skeleton.jpg/800px-Spinosaurus_skeleton.jpg",
+    "caption": "Reconstrucción del esqueleto de Spinosaurus. Las patas traseras acortadas y la cola en forma de aleta son visibles.",
+    "after": "El redescrubimiento de 2014"
+  }
+],
+        content: `
 ## La historia del dinosaurio más enigmático
 
 El Spinosaurus aegyptiacus fue descrito originalmente en 1915 por Ernst Stromer a partir de fósiles del Cretácico de Egipto. Los fósiles originales fueron destruidos en un bombardeo aliado sobre Múnich en 1944. Durante décadas, Spinosaurus fue un misterio reconstruido a partir de notas y dibujos de Stromer.

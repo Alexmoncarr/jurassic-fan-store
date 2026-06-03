@@ -2,6 +2,8 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import BackToTop from './components/BackToTop'
+import CookieBanner from './components/CookieBanner'
 import Home from './pages/Home'
 import Store from './pages/Store'
 import Articles from './pages/Articles'
@@ -21,6 +23,8 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+        <BackToTop />
+        <CookieBanner />
       </HashRouter>
     </HelmetProvider>
   )

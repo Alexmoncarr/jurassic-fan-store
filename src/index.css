@@ -688,3 +688,46 @@ details[open] .faq__icon { transform: rotate(45deg) }
 @media (max-width: 480px) {
   .product-grid, .product-grid--4 { grid-template-columns: 1fr }
 }
+
+/* ══ ARTICLE INLINE IMAGES ═════════════════ */
+.article-content figure {
+  margin: 1.5rem 0 2rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.article-content figure img {
+  width: 100%; height: auto; display: block;
+  max-height: 400px; object-fit: cover;
+}
+.article-content figcaption {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem; color: var(--gray-400);
+  font-style: italic; background: var(--gray-900);
+  border-top: 1px solid var(--border);
+}
+
+/* ══ AD SLOTS ══════════════════════════════ */
+.ad-slot {
+  text-align: center;
+}
+.ad-slot--horizontal {
+  min-height: 90px;
+}
+
+/* ══ PRODUCT CARD CRO ══════════════════════ */
+.product-card__prime-badge {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-family: var(--font-condensed); font-size: 0.6rem;
+  font-weight: 700; letter-spacing: 0.06em;
+  color: var(--green); margin-top: 0.3rem;
+}
+
+/* ══ HORIZONTAL PRODUCT IN SIDEBAR ════════ */
+.sidebar-product { display: flex; gap: .75rem; padding: .85rem 1rem; border-bottom: 1px solid var(--border); cursor: pointer; transition: background .15s; text-decoration: none; align-items: flex-start }
+.sidebar-product:last-of-type { border-bottom: none }
+.sidebar-product:hover { background: var(--hover-bg) }
+.sidebar-product__img { width: 56px; height: 56px; flex-shrink: 0; background: #fff; border-radius: 2px; overflow: hidden; display: flex; align-items: center; justify-content: center }
+.sidebar-product__img img { width: 100%; height: 100%; object-fit: contain; padding: 4px }
+.sidebar-product__name { font-size: .8rem; font-weight: 600; line-height: 1.3; margin-bottom: .2rem; color: var(--white) }
+.sidebar-product__price { font-family: var(--font-condensed); font-size: .88rem; font-weight: 800; color: var(--amber) }
