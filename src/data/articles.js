@@ -216,7 +216,7 @@ John Hammond y su equipo no son villanos: son entusiastas que creyeron que podí
     category: 'Ciencia',
     readTime: 9,
     publishDate: '2025-06-15',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Amber_dagger.jpg/1280px-Amber_dagger.jpg',
     tags: ['ADN', 'Clonación', 'Biotecnología', 'Ciencia ficción vs. realidad'],
     faq: [
@@ -267,7 +267,7 @@ El parque de Crichton seguirá siendo ficción. Pero la ciencia real es, si cabe
     category: 'Paleontología',
     readTime: 7,
     publishDate: '2025-07-01',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Velociraptor_mongoliensis.jpg/1280px-Velociraptor_mongoliensis.jpg',
     tags: ['Velociraptor', 'Mitos', 'Plumas', 'Paleontología'],
     faq: [
@@ -316,7 +316,7 @@ Era rápido (hasta 25 km/h en sprints cortos), tenía un sistema nervioso avanza
     category: 'Guía de compra',
     readTime: 10,
     publishDate: '2025-07-15',
-    published: false,
+    published: true,
     image: 'https://m.media-amazon.com/images/I/71qLLhXwFxL._AC_SL500_.jpg',
     tags: ['Figuras', 'Guía compra', 'Amazon', 'Recomendaciones 2025'],
     faq: [
@@ -363,7 +363,7 @@ Las figuras sin marca o de fabricantes desconocidos en Amazon que imitan los set
     category: 'Guía de compra',
     readTime: 8,
     publishDate: '2025-10-01',
-    published: false,
+    published: true,
     image: 'https://m.media-amazon.com/images/I/81HbKkFetBL._AC_SL500_.jpg',
     tags: ['LEGO', 'Guía compra', '2025', 'Sets'],
     faq: [
@@ -409,7 +409,7 @@ LEGO lanzó en 2024 el **76968 Dinosaur Fossils: T-Rex** (18+), un set completam
     category: 'Paleontología',
     readTime: 6,
     publishDate: '2025-10-15',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Ornithomimus_edmontonicus.jpg/1280px-Ornithomimus_edmontonicus.jpg',
     tags: ['Velocidad', 'Anatomía', 'Paleontología', 'Top 10'],
     faq: [
@@ -480,7 +480,7 @@ Jurassic Park muestra Velociraptores alcanzando a un vehículo a 60 km/h. La rea
     category: 'Paleontología',
     readTime: 7,
     publishDate: '2025-11-01',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Trex_sue_t.jpg/1280px-Trex_sue_t.jpg',
     tags: ['T-Rex', 'Paleontología', 'Ciencia', 'Biomecánica'],
     faq: [
@@ -535,7 +535,7 @@ La escena del cubo de agua vibrando por los pasos del T-Rex sí es científicame
     category: 'Ciencia',
     readTime: 5,
     publishDate: '2025-11-15',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Pteranodon_longiceps_mmartyniuk_wiki.png/1280px-Pteranodon_longiceps_mmartyniuk_wiki.png',
     tags: ['Pterosaurios', 'Ciencia', 'Taxonomía', 'Divulgación'],
     faq: [
@@ -593,7 +593,7 @@ Durante el Cretácico, los pterosaurios gigantes como el Quetzalcoatlus dominaba
     category: 'Paleontología',
     readTime: 8,
     publishDate: '2025-12-01',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Sinosauropteryx_prima.jpg/1280px-Sinosauropteryx_prima.jpg',
     tags: ['Plumas', 'Colores', 'Paleontología', 'Evolución'],
     faq: [
@@ -654,7 +654,7 @@ Los velociraptores de la película, sin embargo, habrían tenido plumas con alta
     category: 'Guías',
     readTime: 6,
     publishDate: '2025-12-15',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Diplodocus_carnegii_hatcher.jpg/1280px-Diplodocus_carnegii_hatcher.jpg',
     tags: ['Documentales', 'Recomendaciones', 'Streaming', 'CGI'],
     faq: [
@@ -755,7 +755,7 @@ Para los más jóvenes. Una serie animada con rigor científico sorprendente par
     category: 'Noticias',
     readTime: 7,
     publishDate: '2026-01-01',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg/1280px-Patagotitan_mayorum_-_Natural_History_Museum_of_Utah.jpg',
     tags: ['Descubrimientos', '2025', 'Paleontología', 'Ciencia'],
     faq: [
@@ -820,7 +820,7 @@ Para 2026, los paleontólogos esperan la descripción formal del titanosaurio ar
     category: 'Jurassic Park',
     readTime: 12,
     publishDate: '2026-01-15',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Isla_Nublar_map.jpg/800px-Isla_Nublar_map.jpg',
     tags: ['Cronología', 'Lore', 'Historia', 'Jurassic World'],
     faq: [
@@ -905,7 +905,7 @@ Los dinosaurios llevan cuatro años conviviendo con los humanos en el mundo. La 
     category: 'Guías',
     readTime: 9,
     publishDate: '2026-02-01',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Trex_sue_t.jpg/1280px-Trex_sue_t.jpg',
     tags: ['Coleccionables', 'Guía de compra', 'LEGO', 'Hammond Collection'],
     faq: [
@@ -997,7 +997,7 @@ Para los más jóvenes, los libros de la **DK Encyclopaedia of Dinosaurs** son l
     category: 'Paleontología',
     readTime: 8,
     publishDate: '2026-02-15',
-    published: false,
+    published: true,
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Spinosaurus_skeleton.jpg/1280px-Spinosaurus_skeleton.jpg',
     tags: ['Spinosaurus', 'Acuático', 'Descubrimientos', 'Marruecos'],
     faq: [

@@ -1,57 +1,47 @@
 import { useNavigate } from 'react-router-dom'
 
-export default function ArticleCard({ article, featured }) {
-  const navigate = useNavigate()
-  const go = () => navigate(`/articulos/${article.slug}`)
+const FMT = { day: 'numeric', month: 'short', year: 'numeric' }
 
-  const dateStr = new Date(article.publishDate).toLocaleDateString('es-ES', {
-    day: 'numeric', month: 'long', year: 'numeric'
-  })
+export default function ArticleCard({ article, size = 'md', horizontal }) {
+  const nav = useNavigate()
+  const go = () => nav(`/articulos/${article.slug}`)
+  const dateStr = new Date(article.publishDate).toLocaleDateString('es-ES', FMT)
 
-  if (featured) {
+  if (horizontal) {
     return (
-      <article className="article-featured" onClick={go} role="button" tabIndex={0}
-        onKeyDown={e => e.key === 'Enter' && go()}
-        aria-label={`Leer artículo: ${article.title}`}
-      >
-        <div className="article-featured__img">
-          <img src={article.image} alt={article.title} loading="lazy" />
+      <div className="article-card article-card--horizontal"
+        onClick={go} role="button" tabIndex={0} onKeyDown={e => e.key==='Enter'&&go()}>
+        <div className="article-card__img" style={{ width: 120, flexShrink: 0 }}>
+          <img src={article.image} alt={article.title} loading="lazy"
+            onError={e => { e.target.src = `https://placehold.co/120x90/1c1c1c/e8a01a?text=${encodeURIComponent(article.category)}` }} />
         </div>
-        <div className="article-featured__body">
-          <div className="article-featured__tag">{article.category}</div>
-          <h2 className="article-featured__title">{article.title}</h2>
-          <p className="article-featured__excerpt">{article.excerpt}</p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--ivory-dim)' }}>
-              {dateStr} · {article.readTime} min lectura
-            </span>
-            <span className="btn btn--outline" style={{ padding: '0.5rem 1.2rem', fontSize: '0.72rem' }}>
-              Leer artículo →
-            </span>
-          </div>
+        <div className="article-card__body">
+          <div className="article-card__cat">{article.category}</div>
+          <h4 className="article-card__title" style={{ fontSize: '0.82rem' }}>{article.title}</h4>
+          <div className="article-card__meta"><span>{dateStr}</span></div>
         </div>
-      </article>
+      </div>
     )
   }
 
   return (
-    <article className="article-card" onClick={go} role="button" tabIndex={0}
-      onKeyDown={e => e.key === 'Enter' && go()}
-      aria-label={`Leer artículo: ${article.title}`}
-    >
+    <div className={`article-card article-card--${size}`}
+      onClick={go} role="button" tabIndex={0} onKeyDown={e => e.key==='Enter'&&go()}>
       <div className="article-card__img">
-        <span className="article-card__cat">{article.category}</span>
-        <img src={article.image} alt={article.title} loading="lazy" />
+        <span className="article-card__tag">{article.category}</span>
+        <img src={article.image} alt={article.title} loading="lazy"
+          onError={e => { e.target.src = `https://placehold.co/640x360/1c1c1c/e8a01a?text=${encodeURIComponent(article.title.slice(0,30))}` }} />
       </div>
       <div className="article-card__body">
+        <div className="article-card__cat">{article.category}</div>
+        <h3 className="article-card__title">{article.title}</h3>
+        {size !== 'sm' && <p className="article-card__excerpt">{article.excerpt}</p>}
         <div className="article-card__meta">
           <span>{dateStr}</span>
-          <span>⏱ {article.readTime} min</span>
+          <span>·</span>
+          <span>{article.readTime} min</span>
         </div>
-        <h3 className="article-card__title">{article.title}</h3>
-        <p className="article-card__excerpt">{article.excerpt}</p>
-        <span className="article-card__arrow">Leer artículo <span>→</span></span>
       </div>
-    </article>
+    </div>
   )
 }

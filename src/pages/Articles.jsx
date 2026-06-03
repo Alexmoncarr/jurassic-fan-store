@@ -1,112 +1,68 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import ArticleCard from '../components/ArticleCard'
-import { publishedArticles, upcomingArticles } from '../data/articles'
+import { publishedArticles } from '../data/articles'
 
 const BASE = 'https://alexmoncarr.github.io/jurassic-fan-store'
+const CATS = ['Todo', 'Paleontología', 'Ciencia', 'Cine', 'Guías', 'Noticias', 'Jurassic Park']
 
 export default function Articles() {
+  const [cat, setCat] = useState('Todo')
+
   useEffect(() => {
     const els = document.querySelectorAll('.reveal')
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target) } })
-    }, { threshold: 0.1 })
+    }, { threshold: 0.08 })
     els.forEach(el => obs.observe(el))
     return () => obs.disconnect()
-  }, [])
+  }, [cat])
+
+  const filtered = cat === 'Todo' ? publishedArticles : publishedArticles.filter(a => a.category === cat)
 
   return (
     <>
       <Helmet>
-        <title>Artículos — Paleontología, Dinosaurios y Jurassic Park | Jurassic Hub</title>
-        <meta name="description" content="Artículos de divulgación sobre dinosaurios, paleontología científica y análisis del universo Jurassic Park y Jurassic World. Actualización quincenal." />
+        <title>Artículos — Paleontología y Jurassic Park | Jurassic Hub</title>
+        <meta name="description" content="Artículos de divulgación sobre dinosaurios, paleontología científica y el universo Jurassic Park y Jurassic World. Actualización quincenal." />
         <link rel="canonical" href={`${BASE}/#/articulos`} />
       </Helmet>
 
-      {/* HERO */}
-      <section style={{ paddingTop: '8rem', paddingBottom: '4rem', background: 'var(--void)', borderBottom: '1px solid var(--border)' }}>
+      {/* Page header */}
+      <div style={{ background: 'var(--gray-900)', borderBottom: '1px solid var(--border)', padding: '3rem 0 2rem' }}>
         <div className="container">
-          <div style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--amber)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-            <span style={{ display: 'block', width: '32px', height: '1px', background: 'var(--amber)' }} />
-            Archivo de artículos
+          <div style={{ fontFamily: 'var(--font-condensed)', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--amber)', marginBottom: '0.5rem' }}>
+            {publishedArticles.length} artículos publicados
           </div>
-          <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: '900', lineHeight: '1.1', marginBottom: '1rem' }}>
-            El registro<br /><em style={{ fontStyle: 'italic', color: 'var(--amber)' }}>fósil</em>
+          <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '0.75rem' }}>
+            Artículos
           </h1>
-          <p style={{ color: 'var(--ivory-dim)', maxWidth: '560px', lineHeight: '1.7' }}>
-            Divulgación paleontológica y análisis cinematográfico en español. Publicamos cada dos semanas. El rigor científico no está reñido con la pasión por la saga.
+          <p style={{ color: 'var(--gray-400)', maxWidth: '52ch', lineHeight: 1.65, fontSize: '0.95rem' }}>
+            Paleontología con rigor científico y análisis del universo cinematográfico Jurassic. Publicamos cada dos semanas.
           </p>
         </div>
-      </section>
+      </div>
 
-      {/* PUBLICADOS */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <div>
-              <div className="section-label">{publishedArticles.length} artículos publicados</div>
-              <h2 className="section-title">Disponibles ahora</h2>
-            </div>
-          </div>
-          <div className="article-grid">
-            {publishedArticles.map((a, i) => (
-              <div key={a.id} className="reveal" style={{ transitionDelay: `${(i % 3) * 0.1}s` }}>
-                <ArticleCard article={a} />
-              </div>
-            ))}
-          </div>
+      <div className="container" style={{ paddingTop: '1.5rem', paddingBottom: '4rem' }}>
+        {/* Category filters */}
+        <div className="filter-bar">
+          {CATS.map(c => (
+            <button key={c} className={`filter-btn${cat === c ? ' active' : ''}`} onClick={() => setCat(c)}>
+              {c}
+            </button>
+          ))}
         </div>
-      </section>
 
-      {/* PRÓXIMOS */}
-      {upcomingArticles.length > 0 && (
-        <section className="section--sm">
-          <div className="container">
-            <div className="section-header reveal">
-              <div>
-                <div className="section-label">Calendario editorial</div>
-                <h2 className="section-title">Próximamente</h2>
-              </div>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border)' }}>
-              {upcomingArticles.map(a => {
-                const dateStr = new Date(a.publishDate).toLocaleDateString('es-ES', {
-                  day: 'numeric', month: 'long', year: 'numeric'
-                })
-                return (
-                  <div key={a.id} className="reveal" style={{
-                    background: 'var(--coal)',
-                    padding: '1.5rem 2rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '1.5rem',
-                    justifyContent: 'space-between',
-                    flexWrap: 'wrap',
-                    opacity: 0.65
-                  }}>
-                    <div>
-                      <div style={{ fontFamily: 'var(--mono)', fontSize: '0.62rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--amber)', marginBottom: '0.4rem' }}>
-                        {a.category}
-                      </div>
-                      <div style={{ fontFamily: 'var(--serif)', fontSize: '1.05rem', fontWeight: '700' }}>
-                        {a.title}
-                      </div>
-                    </div>
-                    <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                      <div style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', color: 'var(--ivory-dim)' }}>
-                        {dateStr}
-                      </div>
-                      <div style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--ivory-dim)', opacity: 0.5, marginTop: '0.25rem' }}>
-                        ⏳ Próximamente
-                      </div>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
+        {filtered.length === 0 ? (
+          <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--gray-400)' }}>
+            No hay artículos en esta categoría todavía.
           </div>
-        </section>
-      )}
+        ) : (
+          <div className="article-grid article-grid--3 reveal">
+            {filtered.map(a => <ArticleCard key={a.id} article={a} size="md" />)}
+          </div>
+        )}
+      </div>
     </>
   )
 }

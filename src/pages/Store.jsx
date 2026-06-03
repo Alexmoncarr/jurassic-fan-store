@@ -6,89 +6,66 @@ import { products, categories } from '../data/products'
 const BASE = 'https://alexmoncarr.github.io/jurassic-fan-store'
 
 export default function Store() {
-  const [active, setActive] = useState('Todo')
+  const [cat, setCat] = useState('Todo')
 
   useEffect(() => {
     const els = document.querySelectorAll('.reveal')
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target) } })
-    }, { threshold: 0.1 })
+    }, { threshold: 0.08 })
     els.forEach(el => obs.observe(el))
     return () => obs.disconnect()
-  }, [active])
+  }, [cat])
 
-  const filtered = active === 'Todo' ? products : products.filter(p => p.category === active)
+  const filtered = cat === 'Todo' ? products : products.filter(p => p.category === cat)
 
   return (
     <>
       <Helmet>
-        <title>Tienda Jurassic — Los mejores productos de Jurassic Park y World | Jurassic Hub</title>
-        <meta name="description" content="Figuras, sets LEGO, libros y películas de Jurassic Park y Jurassic World. Selección curada con análisis detallado y enlaces a Amazon España." />
+        <title>Tienda — LEGO Jurassic, Figuras y Libros | Jurassic Hub</title>
+        <meta name="description" content="Selección de LEGO Jurassic Park, figuras Hammond Collection, libros de paleontología y películas Blu-ray. Análisis honesto y links a Amazon España." />
         <link rel="canonical" href={`${BASE}/#/tienda`} />
-        <meta property="og:title" content="Tienda Jurassic Hub — Productos seleccionados" />
-        <meta property="og:description" content="LEGO, figuras Mattel, libros de paleontología y películas. Los mejores productos para fans de la saga." />
       </Helmet>
 
-      {/* HERO tienda */}
-      <section style={{ paddingTop: '8rem', paddingBottom: '4rem', background: 'var(--void)', borderBottom: '1px solid var(--border)' }}>
+      <div style={{ background: 'var(--gray-900)', borderBottom: '1px solid var(--border)', padding: '3rem 0 2rem' }}>
         <div className="container">
-          <div style={{ fontFamily: 'var(--mono)', fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--amber)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-            <span style={{ display: 'block', width: '32px', height: '1px', background: 'var(--amber)' }} />
-            Tienda afiliada Amazon.es
+          <div style={{ fontFamily: 'var(--font-condensed)', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--amber)', marginBottom: '0.5rem' }}>
+            Tienda afiliada · Amazon.es · tag: jurassicfan21-21
           </div>
-          <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: '900', lineHeight: '1.1', marginBottom: '1rem' }}>
-            Productos para<br /><em style={{ fontStyle: 'italic', color: 'var(--amber)' }}>verdaderos fans</em>
+          <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '0.75rem' }}>
+            Selección para fans
           </h1>
-          <p style={{ color: 'var(--ivory-dim)', maxWidth: '560px', lineHeight: '1.7', marginBottom: '2rem' }}>
-            Selección curada de LEGO, figuras, libros y películas de la saga Jurassic. Cada producto ha sido analizado individualmente. Los enlaces van a Amazon España con nuestro tag de afiliado.
+          <p style={{ color: 'var(--gray-400)', maxWidth: '56ch', lineHeight: 1.65, fontSize: '0.95rem', marginBottom: '1rem' }}>
+            Cada producto ha sido seleccionado manualmente por calidad, precio y relevancia. Comprando a través de nuestros links nos ayudas a seguir publicando, sin coste extra para ti.
           </p>
-          <div className="affiliate-note">
-            Participamos en el Programa de Afiliados de Amazon EU. Al comprar a través de nuestros enlaces recibimos una pequeña comisión, sin ningún coste adicional para ti.
+          <div className="affiliate-note" style={{ maxWidth: '640px' }}>
+            Participamos en el Programa de Afiliados de Amazon EU. Las opiniones son independientes y honestas.
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* CATÁLOGO */}
-      <section className="section">
-        <div className="container">
-          <div className="filter-bar" role="group" aria-label="Filtrar por categoría">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                className={`filter-btn${active === cat ? ' active' : ''}`}
-                onClick={() => setActive(cat)}
-                aria-pressed={active === cat}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <div className="product-grid">
-            {filtered.map((p, i) => (
-              <div key={p.id} className="reveal" style={{ transitionDelay: `${(i % 4) * 0.08}s` }}>
-                <ProductCard product={p} />
-              </div>
-            ))}
-          </div>
-
-          {filtered.length === 0 && (
-            <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--ivory-dim)' }}>
-              No hay productos en esta categoría todavía.
-            </div>
-          )}
-
-          {/* Nota editorial */}
-          <div style={{ marginTop: '4rem', padding: '2rem', background: 'var(--coal)', border: '1px solid var(--border)', borderRadius: '2px' }}>
-            <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.2rem', marginBottom: '0.75rem', color: 'var(--amber)' }}>
-              ¿Cómo elegimos los productos?
-            </h3>
-            <p style={{ color: 'var(--ivory-dim)', fontSize: '0.9rem', lineHeight: '1.7', maxWidth: '680px' }}>
-              Cada producto de esta tienda ha sido seleccionado por calidad, relación calidad-precio y relevancia para los fans de la saga. Damos prioridad a productos con cientos de valoraciones positivas verificadas, marcas de reconocida calidad (Mattel, LEGO, Schleich) y libros con aval científico o cultural. No incluimos productos que no recomendaríamos a un fan exigente.
-            </p>
-          </div>
+      <div className="container" style={{ paddingTop: '1.5rem', paddingBottom: '4rem' }}>
+        <div className="filter-bar">
+          {categories.map(c => (
+            <button key={c} className={`filter-btn${cat === c ? ' active' : ''}`} onClick={() => setCat(c)}>
+              {c} {c !== 'Todo' && `(${products.filter(p => p.category === c).length})`}
+            </button>
+          ))}
         </div>
-      </section>
+
+        <div className="product-grid product-grid--4 reveal">
+          {filtered.map(p => <ProductCard key={p.id} product={p} />)}
+        </div>
+
+        <div className="reveal" style={{ marginTop: '3rem', padding: '2rem', background: 'var(--card-bg)', border: '1px solid var(--border)' }}>
+          <h3 style={{ fontFamily: 'var(--font-condensed)', fontSize: '1rem', fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem', color: 'var(--amber)' }}>
+            Cómo seleccionamos los productos
+          </h3>
+          <p style={{ fontSize: '0.85rem', color: 'var(--gray-400)', lineHeight: 1.65, maxWidth: '680px' }}>
+            Solo incluimos productos con cientos de valoraciones positivas verificadas, de marcas reconocidas (Mattel, LEGO, Schleich) y con buena relación calidad-precio. Si un producto no lo recomendaríamos a un amigo fan exigente, no aparece aquí.
+          </p>
+        </div>
+      </div>
     </>
   )
 }
